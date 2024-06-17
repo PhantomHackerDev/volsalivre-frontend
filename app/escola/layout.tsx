@@ -4,7 +4,6 @@ import Filters from "@/components/basecomponents/filters";
 export default function RootLayout({
   children,
 }: Readonly<{
-  url: string;
   children: React.ReactNode;
 }>) {
   return (

@@ -22,24 +22,18 @@ const SearchList: React.FC<SearchListProps> = ({ menu, setMenu }) => {
       <div className="flex flex-wrap items-center rounded-full bg-white my-2 2xl:w-[50vw] xl:w-[60vw] lg:w-[70vw] md:w-[97vw] sm:w-[96vw] w-[94vw]">
         <SearchButton
           disp={0}
-          method={method}
-          setMethod={setMethod}
           className={`lg:flex hidden flex-col relative ${
             school !== "" && school !== null ? "w-1/4" : "w-1/3"
           } px-2 border-r-2 border-slate-300`}
         />
         <Neighborhood
           disp={0}
-          method={method}
-          setMethod={setMethod}
           className={`lg:flex hidden flex-col relative ${
             school !== "" && school !== null ? "w-1/4" : "w-1/3"
           } px-2 border-r-2 border-slate-300`}
         />
         <SearchSchool
           disp={0}
-          method={method}
-          setMethod={setMethod}
           setSchoolParent={setSchool}
           className={`lg:flex hidden flex-col relative ${
             school !== "" && school !== null ? "w-1/4" : "w-1/3"
@@ -47,8 +41,6 @@ const SearchList: React.FC<SearchListProps> = ({ menu, setMenu }) => {
         />
         <SearchSeries
           disp={0}
-          method={method}
-          setMethod={setMethod}
           className={`relative ${
             school !== "" && school !== null && "lg:flex"
           } hidden flex-col border-l-2 border-slate-300 w-1/4 px-2`}
@@ -85,29 +77,21 @@ const SearchList: React.FC<SearchListProps> = ({ menu, setMenu }) => {
             <p className="text-xl font-bold">Search for a school</p>
 
             <SearchButton
-              method={1}
               disp={1}
-              setMethod={setMethod}
               className="flex flex-col gap-1 mx-8"
             />
             <Neighborhood
               disp={1}
-              method={method}
-              setMethod={setMethod}
               className="flex flex-col gap-1 mx-8"
             />
 
             <SearchSchool
               disp={1}
-              method={method}
-              setMethod={setMethod}
               setSchoolParent={setSchool}
               className="flex flex-col gap-1 mx-8"
             />
             <SearchSeries
               disp={1}
-              method={method}
-              setMethod={setMethod}
               school={school}
               className="flex flex-col gap-1 mx-8"
             />
