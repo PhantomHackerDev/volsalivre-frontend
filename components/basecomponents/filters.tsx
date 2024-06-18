@@ -1,15 +1,15 @@
 'use client';
 
 import { useState } from "react";
-import { Neighborhood, SearchSchool, SearchSeries } from "./searchComponents";
+import { Neighborhood, SearchChecked, SearchRadius, SearchSchool, SearchSeries, TeachingState } from "./searchComponents";
 
 const Filters:React.FC = () => {
     const [school, setSchool] = useState<string>("");
     return (
-        <div className="flex flex-col gap-3">
-          <div className="flex justify-between items-end">
-            <p className="text-2xl font-bold">Filters:</p>
-            <a href="#" className="flex gap-4 text-purple-700 hover:bg-purple-50">
+        <div className="flex flex-col gap-5">
+          <div className="flex justify-between w-[270px] items-center">
+            <p className="text-2xl text-gray-800 font-bold">Filters:</p>
+            <a href="#" className="flex text-sm gap-4  items-center text-purple-700 hover:bg-purple-50">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1em"
@@ -33,12 +33,20 @@ const Filters:React.FC = () => {
               <span>Clear filters</span>
             </a>
           </div>
-          <div className="flex flex-wrap gap-3">
-          </div>
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col text-sm gap-4 text-gray-600 ">
             <Neighborhood disp={1} className="" />
             <SearchSchool disp={1} className="" setSchoolParent={setSchool} />
+            <TeachingState disp={1} className="" school={school}/>
             <SearchSeries disp={1} className="" school={school} />
+          </div>
+          <div className="flex flex-col space-y-2 text-sm gap-4 text-gray-600">
+            <SearchRadius disp={1} className="" />
+            <SearchRadius disp={2} className="" />
+          </div>
+          <div className="flex flex-col text-sm gap-4 text-gray-600">
+            <SearchChecked disp={1} className="" checkedLabel="Scholarship year:" />
+            <SearchChecked disp={2} className="" checkedLabel="Shift:" />
+            <SearchChecked disp={3} className="" checkedLabel="Benefits:" />
           </div>
         </div>
     )

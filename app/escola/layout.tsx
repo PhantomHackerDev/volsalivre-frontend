@@ -1,28 +1,108 @@
 import Link from "next/link";
 import Filters from "@/components/basecomponents/filters";
+import { SearchResultCard } from "@/components/basecomponents/cards";
+
+let SearchResults = [{
+  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230111134036974.jpg",
+  star: 1,
+  title: "Santo Antonio College",
+  at: "Joinville - SC",
+  position: "Iririu",
+  amount: "306.57",
+  period: "Early Childhood Education - Nursery (0 to 1 year old)",
+  schoolYear: [2024, 2025],
+  shift: ['full', 'morning'],
+  originUnit: "R$",
+  originPrice: 1000,
+  presentUnit: "BRL",
+  presentPrice: 500,
+}, 
+{
+  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230111134036974.jpg",
+  star: 1,
+  title: "Santo Antonio College",
+  at: "Joinville - SC",
+  position: "Iririu",
+  amount: "306.57",
+  period: "Early Childhood Education - Nursery (0 to 1 year old)",
+  schoolYear: [2024, 2025],
+  shift: ['full', 'morning'],
+  originUnit: "R$",
+  originPrice: 1000,
+  presentUnit: "BRL",
+  presentPrice: 500,
+}, 
+{
+  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230111134036974.jpg",
+  star: 1,
+  title: "Santo Antonio College",
+  at: "Joinville - SC",
+  position: "Iririu",
+  amount: "306.57",
+  period: "Early Childhood Education - Nursery (0 to 1 year old)",
+  schoolYear: [2024, 2025],
+  shift: ['full', 'morning'],
+  originUnit: "R$",
+  originPrice: 1000,
+  presentUnit: "BRL",
+  presentPrice: 500,
+}, 
+{
+  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230111134036974.jpg",
+  star: 1,
+  title: "Santo Antonio College",
+  at: "Joinville - SC",
+  position: "Iririu",
+  amount: "306.57",
+  period: "Early Childhood Education - Nursery (0 to 1 year old)",
+  schoolYear: [2024, 2025],
+  shift: ['full', 'morning'],
+  originUnit: "R$",
+  originPrice: 1000,
+  presentUnit: "BRL",
+  presentPrice: 500,
+}, 
+{
+  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230111134036974.jpg",
+  star: 1,
+  title: "Santo Antonio College",
+  at: "Joinville - SC",
+  position: "Iririu",
+  amount: "306.57",
+  period: "Early Childhood Education - Nursery (0 to 1 year old)",
+  schoolYear: [2024, 2025],
+  shift: ['full', 'morning'],
+  originUnit: "R$",
+  originPrice: 1000,
+  presentUnit: "BRL",
+  presentPrice: 500,
+}
+];
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  console.log(SearchResults);
+  
   return (
-    <div className="flex flex-col gap-5 py-5">
-      <div className="flex gap-5 justify-around w-full">
-        <Link href="/" className="text-pruple-600">
+    <div className="flex flex-col bg-slate-100 py-0 space-y-6 items-center">
+      <div className="flex gap-3 items-center xl:w-[80vw] lg:w-[90vw] pt-3">
+        <Link href="/" className="text-purple-600">
           Home page
         </Link>
-        {/* <span>{`/`}</span> */}
+        <span className="pt-2 text-gray-500 text-md" >{`/`} Search</span>
       </div>
-      <div className="flex justify-around w-full">
+      <div className="flex gap-10 justify-between xl:w-[80vw] lg:w-[90vw]">
         <p>
           {} bags found in {}
         </p>
-        <div className="flex justify-around gap-5">
-          <div className="flex items-center relative">
+        <div className="flex justify-around items-center gap-5">
+          <div className="flex items-center relative text-gray-700 text-sm">
             <select
               name="order"
-              className="rounded-full px-8 py-1 border border-slate-300 focus:ring-4 ring-purple-600 focus:outline-purple-600"
+              className="rounded-full px-8 py-2 border border-slate-300 focus:ring-2 ring-purple-600 focus:outline-purple-600"
             >
               <option value={0}>Relevance</option>
               <option value={1}>Lowest Price</option>
@@ -36,6 +116,7 @@ export default function RootLayout({
                 width="1em"
                 height="1em"
                 viewBox="0 0 512 512"
+                className="p-5"
               >
                 <path
                   fill="currentColor"
@@ -44,8 +125,8 @@ export default function RootLayout({
               </svg>
             </span>
           </div>
-          <div className="flex gap-5">
-            <span className="rounded-full bg-orange-600 text-white px-2 flex items-center cursor-pointer">
+          <div className="flex gap-5 items-center">
+            <span className="rounded-full bg-orange-600 text-white px-2 py-2 flex items-center cursor-pointer">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="1em"
@@ -75,10 +156,29 @@ export default function RootLayout({
           </div>
         </div>
       </div>
-      <div className="flex gap-5 w-full justify-around">
+      {/* <hr className="text-gray-700 p-0" /> */}
+      <div className="pt-0 flex gap-10 xl:w-[80vw] lg:w-[90vw] pb-5">
         <Filters />
-        <div className="flex flex-wrap gap-5">
-            
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+          {SearchResults.map((result: any, index: number) => 
+            <div key={index} className="bg-white max-w-sm p-4 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
+              <SearchResultCard 
+                key={index}
+                mark={result.mark}
+                title={result.title}
+                star={result.star}
+                at={result.at}
+                period={result.period}
+                position={result.position}
+                schoolYear={result.schoolYear}
+                shift={result.shift}
+                originUnit={result.originUnit}
+                originPrice={result.originPrice}
+                presentUnit={result.presentUnit}
+                presentPrice={result.presentPrice}
+              />
+            </div>
+          )}
         </div>
       </div>
     </div>

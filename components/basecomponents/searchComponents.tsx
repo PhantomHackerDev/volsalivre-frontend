@@ -7,7 +7,15 @@ interface SearchButtonProps {
   className: string;
   school?: any;
   setSchoolParent?: any;
-}
+  radius?: number;
+  checkedLabel?: string;
+};
+
+let checkedData = [
+  ["2024", "2025"],
+  ["Morning", "Afternoon", "Full", "Semi-integral", "Nocturnal", "EAD", "Saturday"],
+  ["Super School"],
+];
 
 const SearchButton: React.FC<SearchButtonProps> = ({ disp, className }) => {
   const [geo, setGeo] = useState<string | any>("Sao Paulo, SP");
@@ -45,7 +53,7 @@ const SearchButton: React.FC<SearchButtonProps> = ({ disp, className }) => {
             </span>
             <input
               type="text"
-              className={`text-xl py-2 focus:outline-none rounded-full w-4/5`}
+              className={`py-3 focus:outline-none rounded-full w-4/5 text-sm `}
               value={geo}
               onChange={(e) => setGeo(e.target.value)}
               onClick={() => setShowGeo(true)}
@@ -53,14 +61,14 @@ const SearchButton: React.FC<SearchButtonProps> = ({ disp, className }) => {
           </div>
         </>
       ) : (
-        <div className={`${className}`}>
+        <>
           <label htmlFor="" className="font-semibold text-lg">
             City:
           </label>
           <div className="flex items-center relative rounded-full border">
             <input
               type="text"
-              className="px-7 py-2 rounded-full w-full focus:outline-none focus:ring-2 focus:ring-purple-500 border border-purple-500"
+              className="px-7 py-1 rounded-full w-full focus:outline-none focus:ring-2 focus:ring-purple-500 border border-purple-500"
               value={geo}
               onClick={() => setShowGeo(true)}
               onChange={(e) => setGeo(e.target.value)}
@@ -92,7 +100,7 @@ const SearchButton: React.FC<SearchButtonProps> = ({ disp, className }) => {
               </svg>
             </span>
           </div>
-        </div>
+        </>
       )}
       <div
         className={`${
@@ -124,10 +132,10 @@ const SearchButton: React.FC<SearchButtonProps> = ({ disp, className }) => {
             <span> My location </span>
           </div>
         </button>
-        <p className="px-4 py-2 font-semibold bg-slage-100 text-slate-500">
+        <p className="px-4 py-2 font-semibold bg-slate-100 text-slate-500">
           SUGGESTIONS
         </p>
-        <p className="px-4 py-2 sm text-slate-500">No results for search</p>
+        <p className="px-4 py-2 sm text-slate-500 bg-white">No results for search</p>
       </div>
     </div>
   );
@@ -162,7 +170,7 @@ const Neighborhood: React.FC<SearchButtonProps> = ({ disp, className }) => {
             </span>
             <input
               type="text"
-              className={`text-xl py-2 focus:outline-none rounded-full w-4/5`}
+              className={`text-sm py-3 focus:outline-none rounded-full w-4/5`}
               value={neigh}
               onChange={(e) => setNeigh(e.target.value)}
               placeholder="Eter your neighbor"
@@ -172,15 +180,16 @@ const Neighborhood: React.FC<SearchButtonProps> = ({ disp, className }) => {
         </>
       ) : (
         <>
-          <label htmlFor="" className="font-semibold text-lg">
+          <label htmlFor="" className="font-semibold text-sm">
             Neighborhood:
           </label>
-          <div className="flex items-center relative rounded-full">
+          <div className="pt-1 flex items-center relative rounded-full">
             <input
               type="text"
-              className="px-8 py-2 rounded-full w-full focus:outline-none border border-purple-500 focus:ring-2 focus:ring-purple-500"
+              placeholder="Enter your neighborhood"
+              className="px-10 py-1.5 text-sm rounded-full w-full focus:outline-none border border-purple-500 focus:ring-2 focus:ring-purple-500"
               value={neigh}
-              onClick={() => {console.log('4567'); setShowNeigh(true)}}
+              onClick={() => {setShowNeigh(true)}}
               onChange={(e) => setNeigh(e.target.value)}
             />
             <span className="absolute left-2">
@@ -260,25 +269,26 @@ const SearchSchool: React.FC<SearchButtonProps> = ({
             </span>
             <input
               type="text"
-              className={`text-xl py-2 focus:outline-none rounded-full w-4/5`}
+              className={`text-sm py-3 focus:outline-none rounded-full w-4/5`}
               value={school}
               onChange={(e) => handleSetSchool(e.target.value)}
-              placeholder="Eter your neighbor"
+              placeholder="Enter your neighbor"
               onClick={() => setShowSchool(true)}
             />
           </div>
         </>
       ) : (
         <>
-          <label htmlFor="" className="font-semibold text-lg">
+          <label htmlFor="" className="font-semibold text-sm">
             School:
           </label>
-          <div className="flex items-center relative rounded-full">
+          <div className="flex pt-1.5 items-center relative rounded-full">
             <input
               type="text"
-              className="px-8 py-2 rounded-full w-full focus:outline-none border border-purple-500 focus:ring-purple-500 focus:ring-2"
+              placeholder="Enter School"
+              className="px-10 py-1 text-sm rounded-full w-full focus:outline-none border border-purple-500 focus:ring-purple-500 focus:ring-2"
               value={school}
-              onClick={() => setShowSchool(true)}
+              onClick={() => setShowSchool(false)}
               onChange={(e) => handleSetSchool(e.target.value)}
             />
             <span className="absolute left-2">
@@ -355,7 +365,7 @@ const SearchSeries: React.FC<SearchButtonProps> = ({
             </span>
             <input
               type="text"
-              className={`text-xl py-2 focus:outline-none rounded-full w-4/5`}
+              className={`text-sm py-1 focus:outline-none rounded-full w-4/5`}
               value={series}
               onChange={(e) => setSeires(e.target.value)}
               placeholder="Select a series"
@@ -383,13 +393,14 @@ const SearchSeries: React.FC<SearchButtonProps> = ({
         </>
       ) : (
         <>
-          <label htmlFor="" className="font-semibold text-lg">
+          <label htmlFor="" className="font-semibold text-sm">
             Series:
           </label>
-          <div className={`flex items-center relative rounded-full`}>
+          <div className={`flex pt-1 items-center relative rounded-full`}>
             <input
               type="text"
-              className="px-8 py-2 rounded-full w-full border focus:outline-none border-purple-500 focus:ring-2 focus:ring-purple-500"
+              placeholder="Select a series"
+              className="px-10 py-1.5 text-sm rounded-full w-full border focus:outline-none border-purple-500 focus:ring-2 focus:ring-purple-500"
               value={series}
               onClick={() => setShowValue(true)}
               onChange={(e) => setSeires(e.target.value)}
@@ -423,7 +434,7 @@ const SearchSeries: React.FC<SearchButtonProps> = ({
       >
         <ul role="listbox">
           <li
-            className="hover:bg-orange-400 hover:text-white px-4 py-2 cursor-pointer"
+            className="hover:bg-orange-400 hover:text-white px-4 py-1 cursor-pointer"
             role="option"
             aria-selected="true"
           >
@@ -432,7 +443,7 @@ const SearchSeries: React.FC<SearchButtonProps> = ({
             </strong>
           </li>
           <li
-            className="hover:bg-orange-400 hover:text-white px-4 py-2 cursor-pointer"
+            className="hover:bg-orange-400 hover:text-white px-4 py-1 cursor-pointer"
             role="option"
             aria-selected="false"
           >
@@ -441,7 +452,7 @@ const SearchSeries: React.FC<SearchButtonProps> = ({
             </strong>
           </li>
           <li
-            className="hover:bg-orange-400 hover:text-white px-4 py-2 cursor-pointer"
+            className="hover:bg-orange-400 hover:text-white px-4 py-1 cursor-pointer"
             role="option"
             aria-selected="false"
           >
@@ -454,4 +465,156 @@ const SearchSeries: React.FC<SearchButtonProps> = ({
     </div>
   );
 };
-export { SearchButton, Neighborhood, SearchSchool, SearchSeries };
+
+const TeachingState: React.FC<SearchButtonProps> = ({
+  disp,
+  className,
+  setSchoolParent,
+}) => {
+  const [state, setState] = useState<string | any>();
+  const [showValue, setShowValue] = useState<boolean>(false);
+  return (
+    <div className={`${className} relative`} onBlur={() => setShowValue(false)}>
+      <>
+        <label htmlFor="" className="font-semibold text-sm">
+          Teaching State:
+        </label>
+        <div className={`flex pt-1 items-center relative rounded-full`}>
+          <input
+            type="text"
+            placeholder="Select a teaching step"
+            className="px-10 py-1.5 text-sm rounded-full w-full border focus:outline-none border-purple-500 focus:ring-2 focus:ring-purple-500"
+            value={state}
+            onClick={() => setShowValue(true)}
+            onChange={(e) => setState(e.target.value)}
+          />
+          <span className="absolute left-2">
+            <svg
+              className="w-6 h-6 text-slate-500 dark:text-white"
+              aria-hidden="true"
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="none"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke="currentColor"
+                strokeLinecap="square"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M10 19H5a1 1 0 0 1-1-1v-1a3 3 0 0 1 3-3h2m10 1a3 3 0 0 1-3 3m3-3a3 3 0 0 0-3-3m3 3h1m-4 3a3 3 0 0 1-3-3m3 3v1m-3-4a3 3 0 0 1 3-3m-3 3h-1m4-3v-1m-2.121 1.879-.707-.707m5.656 5.656-.707-.707m-4.242 0-.707.707m5.656-5.656-.707.707M12 8a3 3 0 1 1-6 0 3 3 0 0 1 6 0Z"
+              />
+            </svg>
+          </span>
+        </div>
+      </>
+      <div
+        className={`${
+          showValue === false && "hidden"
+        } absolute top-full flex flex-col w-full max-h-48 mt-4 overflow-y-auto rounded border border-slate-150 bg-white text-orange-600 z-10`}
+      >
+        <ul role="listbox">
+          <li
+            className="hover:bg-orange-400 hover:text-white px-4 py-1 cursor-pointer"
+            role="option"
+            aria-selected="true"
+          >
+            <strong className="z-text z-text--size-medium z-text--weight-middle z-text--left z-list-box__option-label-title z-text--white">
+              Early Childgood Education (0 a 1 ano)
+            </strong>
+          </li>
+          <li
+            className="hover:bg-orange-400 hover:text-white px-4 py-1 cursor-pointer"
+            role="option"
+            aria-selected="false"
+          >
+            <strong className="z-text z-text--size-medium z-text--weight-middle z-text--left z-list-box__option-label-title z-text--interactive">
+              Early Childgood Education - G1 (1 a 2 anos)
+            </strong>
+          </li>
+          <li
+            className="hover:bg-orange-400 hover:text-white px-4 py-1 cursor-pointer"
+            role="option"
+            aria-selected="false"
+          >
+            <strong className="z-text z-text--size-medium z-text--weight-middle z-text--left z-list-box__option-label-title z-text--interactive">
+              Early Childgood Education - G2 (2 anos)
+            </strong>
+          </li>
+        </ul>
+      </div>
+    </div>
+  )
+};
+
+const SearchRadius: React.FC<SearchButtonProps> = ({
+  disp,
+  className,
+}) => {
+  const [radiusValue, setRadiusValue] = useState<number | any>();
+  return (
+    <div className={`${className} relative`}>
+      {disp === 1 ? 
+      <>
+        <label htmlFor="" className="font-semibold text-sm" >
+          Search radius
+        </label>
+        <p>Up to {radiusValue} km</p>
+        <input 
+          type="range" 
+          onChange={(e) => setRadiusValue(e.target.value)} 
+          value = {radiusValue} 
+          id="currency-input" 
+          className="w-full h-2 bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 accent-indigo-600" 
+          placeholder="Enter amount" />
+      </> : 
+      <>
+        <label htmlFor="" className="font-semibold text-sm">Monthly fee</label>
+        <p>R$ 1.00 to R$ 10000.00</p>
+        <input 
+          type="range" 
+          onChange={(e) => setRadiusValue(e.target.value)} 
+          value = {radiusValue} 
+          id="currency-input" 
+          className="w-full h-2 bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 accent-indigo-600" 
+          placeholder="Enter amount" />
+      </>
+      }
+    </div>
+  )
+};
+
+const SearchChecked: React.FC<SearchButtonProps> = ({disp, className, checkedLabel}) => {
+  const checkedDisp: any = [];
+  // if (disp === 1) {
+    let length = checkedData[disp-1].length;
+    for (let i = 0; i < length; i++) {
+      const element = checkedData[disp-1][i];
+      checkedDisp.push(
+        <div key={i} className="flex items-center mb-4">
+          <input id={`default-checkbox${i}-${disp-1}`} type="checkbox" value="" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"/>
+          <label htmlFor={`default-checkbox${i}-${disp-1}`} className={`${disp === 3? 'flex justify-between':''} ms-2 text-sm font-medium text-gray-900 dark:text-gray-300`}>
+            {element}
+          </label>
+            {disp === 3?
+              <a className="pl-3 flex text-purple-700 hover:bg-purple-50" >
+                <svg className="w-[24px] h-[24px] text-gray-800 dark:text-white " aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" fill="none" viewBox="0 0 24 24">
+                  <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M12 13V8m0 8h.01M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"/>
+                </svg>
+              </a>
+            :''}
+        </div>
+      )
+    }
+  // }
+  return (
+    <div className={`${className} relative`}>
+      <>
+        <label htmlFor="" className="font-semibold text-sm">{checkedLabel}</label>
+        {checkedDisp}
+      </>
+    </div>
+  )
+};
+export { SearchButton, Neighborhood, SearchSchool, SearchSeries, TeachingState, SearchRadius, SearchChecked };
