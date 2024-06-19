@@ -8,7 +8,7 @@ const SearchResults: React.FC<OtherSchoolsProps> = ({}) => {
       <p className="text-2xl font-bold text-gray-900">Private schools with scholarships</p>
       <div className="flex justify-between">
         <p className="text-slate-700">Showing {} close to <a href="#" className="text-blue-500 hover:text-blue-700">Sao Paulo-SP</a></p>
-        <a href="#" className="text-blue-500 underline hover:text-blue-700">See all schools</a>        
+        <a href="/escola/busca" className="text-blue-500 underline hover:text-blue-700">See all schools</a>        
       </div>
         <Carousel />
     </div>

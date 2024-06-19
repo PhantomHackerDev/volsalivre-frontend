@@ -1,5 +1,6 @@
 import teachImage from "@/public/assets/images/banner-home.png";
 import Image from "next/image";
+import Link from "next/link";
 
 const TeachStage: React.FC = () => {
   return (
@@ -16,8 +17,9 @@ const TeachStage: React.FC = () => {
             Search for the teaching stage
           </p>
           <div className="grid lg:grid-cols-4 lg:gap-10 sm:grid-cols-2 gap-3">
-            <button
-              type="button"
+            <Link
+              // type="button"
+              href="/escola/busca"
               className="px-6 py-3.5 lg:text-base font-medium text-white inline-flex gap-2 items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg text-center"
             >
               <svg
@@ -37,9 +39,10 @@ const TeachStage: React.FC = () => {
                 />
               </svg>
               Education Children{"'"}s
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              // type="button"
+              href="/escola/busca"
               className="px-6 py-3.5 lg:text-base font-medium text-white inline-flex gap-2 items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg text-center"
             >
               <svg
@@ -68,9 +71,10 @@ const TeachStage: React.FC = () => {
                 />
               </svg>
               Teaching Fundamental 1
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              // type="button"
+              href="/escola/busca"
               className="px-6 py-3.5 lg:text-base font-medium text-white inline-flex gap-2 items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg text-center"
             >
               <svg
@@ -85,9 +89,10 @@ const TeachStage: React.FC = () => {
                 ></path>
               </svg>
               Teaching Fundamental 2
-            </button>
-            <button
-              type="button"
+            </Link>
+            <Link
+              // type="button"
+              href="/escola/busca"
               className="px-6 py-3.5 lg:text-base font-medium text-white inline-flex gap-2 items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg text-center"
             >
               <svg
@@ -102,7 +107,7 @@ const TeachStage: React.FC = () => {
                 ></path>
               </svg>
               Teaching Average
-            </button>
+            </Link>
           </div>
         </div>
       </div>

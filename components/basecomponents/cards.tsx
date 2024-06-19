@@ -192,7 +192,6 @@ const SearchResultCard: React.FC<SearchResultCardProps> = ({
   presentUnit,
   presentPrice,
 }) => {
-  console.log(shift);
   const shiftArray: any = [];
   const schoolYearArray: any = [];
   let shiftlength = shift.length;
@@ -247,7 +246,7 @@ const SearchResultCard: React.FC<SearchResultCardProps> = ({
         </span>
       </div>
       <div className="flex flex-col">
-        <p className="pb-0 text-gray-400">{originUnit} {originPrice}</p>
+        <p className="pb-0 text-gray-400 line-through decoration-gray-500">{originUnit} {originPrice}</p>
         <p className="pt-0 font-semibold text-gray-700">
           {presentUnit} {presentPrice} 
           <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
@@ -263,4 +262,22 @@ const SearchResultCard: React.FC<SearchResultCardProps> = ({
   )
 }
 
-export { TransformingCard, OtherSchoolsCard, LatestArticleCard, PrivateSchoolCard, SearchResultCard };
+interface PopularSchoolCardProps {
+  mark: any;
+}
+
+const PopularSchoolCard: React.FC<PopularSchoolCardProps> = ({ mark }) => {
+  return (
+    <div className="flex ">
+      <img
+        src={mark}
+        alt="#"
+        width={70}
+        height={70}
+        className="w-36 h-36 rounded-md"
+      />
+    </div>
+  )
+};
+
+export { TransformingCard, OtherSchoolsCard, LatestArticleCard, PrivateSchoolCard, SearchResultCard, PopularSchoolCard };

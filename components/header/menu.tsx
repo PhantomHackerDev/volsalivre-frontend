@@ -10,7 +10,7 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
   const [educ, setEduc] = useState<boolean>(false);
   return (
     <>
-    <div className="hidden lg:flex gap-20 text-white justify-center">
+    <div className="hidden lg:flex gap-20 text-white justify-center z-10">
       <div className="relative flex flex-col gap-1 group/como">
         <div className="flex justify-center gap-5 cursor-pointer">
           <span>How it works</span>

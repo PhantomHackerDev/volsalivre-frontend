@@ -75,15 +75,13 @@ const Header = () => {
             </div>
           </div>
           <div className={`flex flex-col justify-start 2xl:gap-10 lg:gap-2 lg:static`}>
-            {/* Search list */}
             <SearchList menu={menu} setMenu={setMenu} />
-            {/* Search list end */}
             <Menu menu={menu} />
           </div>
         </div>
-        {/* follow menu start */}        
-        <Communicate menu={menu} />
-        {/* follow menu end */}
+        <div className="flex">
+          <Communicate menu={menu} />
+        </div>
       </div>
     </div>
   );
