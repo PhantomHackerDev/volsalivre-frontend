@@ -86,18 +86,18 @@ export default function RootLayout({
 }>) {
   return (
     <div className="flex flex-col bg-slate-100 py-0 space-y-6 items-center">
-      <div className="flex gap-3 items-center xl:w-[80vw] lg:w-[90vw] pt-3">
-        <Link href="/" className="text-purple-600">
+      <div className="flex gap-3 items-center xl:w-[80vw] lg:w-[90vw] max-w-screen-xl px-3 pt-3">  
+        <Link href="/" className="text-purple-600 ">
           Home page
         </Link>
         <span className="pt-2 text-gray-500 text-md" >{`/`} Search</span>
       </div>
-      <div className="flex gap-10 justify-between xl:w-[80vw] lg:w-[90vw]">
+      <div className="flex flex-col lg:flex-row lg:justify-between md:flex-row md:justify-between sm:flex-row gap-10 justify-between xl:w-[80vw] lg:w-[90vw] max-w-screen-xl px-3">
         <p>
           {} bags found in {}
         </p>
         <div className="flex justify-around items-center gap-5">
-          <div className="flex items-center relative text-gray-700 text-sm">
+          <div className="flex items-center relative lg:hidden md:hidden sm:hidden text-gray-700 text-sm">
             <select
               name="order"
               className="rounded-full px-8 py-2 border border-slate-300 focus:ring-2 ring-purple-600 focus:outline-purple-600"
@@ -155,8 +155,10 @@ export default function RootLayout({
         </div>
       </div>
       {/* <hr className="text-gray-700 p-0" /> */}
-      <div className="pt-0 flex gap-5 xl:w-[80vw] lg:w-[90vw] pb-5">
-        <Filters type="search" />
+      <div className="pt-0 flex flex-row gap-5 xl:w-[80vw] lg:w-[90vw] max-w-screen-xl px-3 pb-5">
+        <div className="max-[1200px]:hidden">
+          <Filters type="search" />
+        </div>
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {SearchResults.map((result: any, index: number) => 
             <div key={index} className="bg-white max-w-sm p-4 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">

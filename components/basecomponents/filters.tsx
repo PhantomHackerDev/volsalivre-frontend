@@ -8,8 +8,6 @@ interface FilterProps {
 }
 
 const Filters:React.FC<FilterProps> = ({type}) => {
-  console.log(type);
-  
     const [school, setSchool] = useState<string>("");
     return (
         <div className="flex flex-col gap-5">

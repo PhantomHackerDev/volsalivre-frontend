@@ -76,20 +76,20 @@ export default function RootLayout({
 }>) {
   return (
     <div className="flex bg-slate-100 flex-col">
-      <div className="flex flex-col space-y-5 bg-slate-100 h-auto items-center bg-[url('https://img.imageboss.me/me/width/768/dpr:2/banners/banner-xplp-mobile-melhor-escola.webp')]">      
-        <div className="flex gap-3 items-center xl:w-[80vw] lg:w-[90vw] pt-3">
+      <div className="flex flex-col space-y-5 h-auto items-center bg-[url('https://img.imageboss.me/me/width/768/dpr:2/banners/banner-xplp-mobile-melhor-escola.webp')] bg-cover bg-center">      
+        <div className="flex gap-3 items-center xl:w-[80vw] lg:w-[90vw] max-w-screen-xl px-3 pt-3">
           <Link href="/" className="text-white">
             Home page
           </Link>
           <span className="pt-2 text-white text-md" >{`/`} School</span>
         </div>
-        <div className="flex pt-5 gap-3 items-center xl:w-[80vw] lg:w-[90vw] pt-3">
+        <div className="flex pt-5 gap-3 items-center max-w-screen-xl px-3 xl:w-[80vw] lg:w-[90vw]">
           <h1 className="text-4xl font-semibold text-white">High Schools</h1>
         </div>
-        <div className="flex gap-3 items-center xl:w-[80vw] lg:w-[90vw] pt-3">
+        <div className="flex gap-3 items-center max-w-screen-xl px-3 xl:w-[80vw] lg:w-[90vw]">
           <p className="text-lg  text-white">Find the best private high schools! Secure your scholarship with a monthly <br/>fee starting at R$85.00!</p>
         </div>
-        <div className="flex gap-3 justify-start items-start xl:w-[80vw] lg:w-[90vw] py-5">
+        <div className="flex gap-3 justify-start items-start xl:w-[80vw] lg:w-[90vw] px-3 py-5">
           <div className="flex relative items-center space-x-5 pt-1 ">
             <input
               type="text"
@@ -102,9 +102,11 @@ export default function RootLayout({
       </div>
       {/* <hr className="text-gray-700 p-0" /> */}
       <div className="flex flex-col bg-slate-100 py-5 space-y-6 items-center">
-        <div className="pt-0 flex gap-5 xl:w-[80vw] lg:w-[90vw] pb-5">
-          <Filters type = "education" />
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="pt-0 flex gap-5 xl:w-[80vw] lg:w-[90vw] px-3 pb-5">
+          <div className="max-[1200px]:hidden">
+            <Filters type = "education" />
+          </div>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 w-full">
             {PopularSchools.map((school: any, index: number) => 
               <div key={index} className="bg-white max-w-sm p-4 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
                 <PrivateSchoolCard 
