@@ -84,8 +84,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  console.log(SearchResults);
-  
   return (
     <div className="flex flex-col bg-slate-100 py-0 space-y-6 items-center">
       <div className="flex gap-3 items-center xl:w-[80vw] lg:w-[90vw] pt-3">
@@ -157,7 +155,7 @@ export default function RootLayout({
         </div>
       </div>
       {/* <hr className="text-gray-700 p-0" /> */}
-      <div className="pt-0 flex gap-10 xl:w-[80vw] lg:w-[90vw] pb-5">
+      <div className="pt-0 flex gap-5 xl:w-[80vw] lg:w-[90vw] pb-5">
         <Filters />
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {SearchResults.map((result: any, index: number) => 

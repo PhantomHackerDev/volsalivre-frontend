@@ -1,3 +1,6 @@
+import { log } from "console";
+import { start } from "repl";
+
 const stars = [0, 0, 0, 0, 0];
 
 interface StarProps {
@@ -190,9 +193,28 @@ const SearchResultCard: React.FC<SearchResultCardProps> = ({
   presentPrice,
 }) => {
   console.log(shift);
-  
+  const shiftArray: any = [];
+  const schoolYearArray: any = [];
+  let shiftlength = shift.length;
+  let yearlength = schoolYear.length;
+  for (let i = 0; i < shiftlength; i++) {
+    const element = shift[i];
+    shiftArray.push(
+      <button type="button" className="text-purple-700 border rounded-full border-purple-700 hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium text-sm px-4 py-1 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
+        {element}
+      </button>
+    )
+  }
+  for (let i = 0; i < yearlength; i++) {
+    const element = schoolYear[i];
+    schoolYearArray.push(
+      <button type="button" className="text-purple-700 border rounded-full border-purple-700 hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium text-sm px-3 py-1 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
+        {element}
+      </button>
+    )
+  }
   return (
-    <div className="flex flex-col p-2 bg-white rounded-lg justify-between gap-5">
+    <div className="flex flex-col bg-white rounded-lg justify-between gap-2">
       <div className="flex justify-between items-center">
         <img
           src={mark}
@@ -203,39 +225,39 @@ const SearchResultCard: React.FC<SearchResultCardProps> = ({
         />
         <p className="text-based font-semibold text-gray-700">{title}</p>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-1">
         {stars.map((s: any, index: number) => (
           <Star key={index} flag={index < star ? true : false} />
         ))}
         <span>{star}</span>
       </div>
       <div className="flex flex-col gap-2 text-gray-400">
-        <p>{period}</p>
-        <p>{position}</p>
-        <p>{at}</p>
+        <p className="text-gray-700">{period}</p>
+        <p className="text-sm">{position}</p>
+        <p className="text-sm">{at}</p>
       </div><hr className="p-2"/>
       <div className="flex flex-col">
         <p>School year</p>
-        {schoolYear.map((year: any, index: number) => {
-          <button key = {index}>
-            {year}
-          </button>
-        })}
+        <span className="flex justify-start">
+          {schoolYearArray}
+        </span>
         <p>Shift</p>
-        {shift.map((time: string, index: number) => {
-          <button key = {index}>
-            {time}
-          </button>
-        })}
+        <span className="flex justify-start">
+          {shiftArray}
+        </span>
       </div>
-      <div className="flex space-y-0 flex-col">
+      <div className="flex flex-col">
         <p className="pb-0 text-gray-400">{originUnit} {originPrice}</p>
         <p className="pt-0 font-semibold text-gray-700">
           {presentUnit} {presentPrice} 
           <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-            {/* - ({presentPrice}%{originPrice}) * 100 */}
           </span>
         </p>
+      </div>
+      <div className="flex flex-col">
+        <button type="button" className="text-white bg-orange-500 hover:bg-orange-600 focus:outline-double focus:ring-4 focus:ring-purple-500 font-medium rounded-full text-sm px-5 py-1 text-center me-2 mb-2 dark:focus:ring-yellow-900">
+          See Scholarship
+        </button>
       </div>
     </div>
   )
