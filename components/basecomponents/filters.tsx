@@ -3,7 +3,13 @@
 import { useState } from "react";
 import { Neighborhood, SearchChecked, SearchRadius, SearchSchool, SearchSeries, TeachingState } from "./searchComponents";
 
-const Filters:React.FC = () => {
+interface FilterProps {
+  type: string;
+}
+
+const Filters:React.FC<FilterProps> = ({type}) => {
+  console.log(type);
+  
     const [school, setSchool] = useState<string>("");
     return (
         <div className="flex flex-col gap-5">
@@ -36,15 +42,30 @@ const Filters:React.FC = () => {
           <div className="flex flex-col text-sm gap-4 text-gray-600 ">
             <Neighborhood disp={1} className="" />
             <SearchSchool disp={1} className="" setSchoolParent={setSchool} />
-            <TeachingState disp={1} className="" school={school}/>
+            {
+              type === "search" ? 
+              <TeachingState disp={1} className="" school={school}/>              
+              :
+              ''
+            }
             <SearchSeries disp={1} className="" school={school} />
           </div>
           <div className="flex flex-col space-y-2 text-sm gap-4 text-gray-600">
-            <SearchRadius disp={1} className="" />
+            {
+              type === "search" ?
+                <SearchRadius disp={1} className="" />
+                :
+                ''
+            }
             <SearchRadius disp={2} className="" />
           </div>
           <div className="flex flex-col text-sm gap-4 text-gray-600">
-            <SearchChecked disp={1} className="" checkedLabel="Scholarship year:" />
+          {
+              type === "search" ?
+                <SearchChecked disp={1} className="" checkedLabel="Scholarship year:" />
+                :
+                ''
+            }
             <SearchChecked disp={2} className="" checkedLabel="Shift:" />
             <SearchChecked disp={3} className="" checkedLabel="Benefits:" />
           </div>

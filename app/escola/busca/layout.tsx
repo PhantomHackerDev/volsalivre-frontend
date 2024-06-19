@@ -156,7 +156,7 @@ export default function RootLayout({
       </div>
       {/* <hr className="text-gray-700 p-0" /> */}
       <div className="pt-0 flex gap-5 xl:w-[80vw] lg:w-[90vw] pb-5">
-        <Filters />
+        <Filters type="search" />
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
           {SearchResults.map((result: any, index: number) => 
             <div key={index} className="bg-white max-w-sm p-4 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">

@@ -1,85 +1,73 @@
 import Link from "next/link";
 import Filters from "@/components/basecomponents/filters";
-import { SearchResultCard } from "@/components/basecomponents/cards";
-import Popularmarks from '@/components/dashboard/popularschools/page';
+import { PrivateSchoolCard } from "@/components/basecomponents/cards";
 
+let PopularSchools = [{
+  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230111134036974.jpg",
+  star: 1,
+  title: "Santo Antonio College",
+  at: "Joinville - SC",
+  position: "Iririu",
+  scholarUnit: "BRL",
+  amount: "306.57",
+}, 
+{
+  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230323142359118.png",
+  star: 5,
+  title: "Intergenius College",
+  at: "Joinville - SC",
+  position: "Juliao Ramos",
+  scholarUnit: "BRL",
+  amount: "306.57",
 
-let SearchResults = [{
-  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230111134036974.jpg",
-  star: 1,
-  title: "Santo Antonio College",
+}, {
+  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20231109205606993.png",
+  star: 5,
+  title: "Djanira Tavares College",
   at: "Joinville - SC",
-  position: "Iririu",
+  position: "cruise",
+  scholarUnit: "BRL",
   amount: "306.57",
-  period: "Early Childhood Education - Nursery (0 to 1 year old)",
-  schoolYear: [2024, 2025],
-  shift: ['full', 'morning'],
-  originUnit: "R$",
-  originPrice: 1000,
-  presentUnit: "BRL",
-  presentPrice: 500,
+
+}, {
+  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20220111181534748.jpg",
+  star: 5,
+  title: "Colegio Rumo Initial",
+  at: "Joinville - SC",
+  position: "Sao, Joao Climaco",
+  scholarUnit: "BRL",
+  amount: "306.57",
+
+}, {
+  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230612201001704.png",
+  star: 5,
+  title: "Filomena De Marco College",
+  at: "Joinville - SC",
+  position: "Guarani Park",
+  scholarUnit: "BRL",
+  amount: "306.57",
+
 }, 
 {
-  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230111134036974.jpg",
-  star: 1,
-  title: "Santo Antonio College",
+  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20191126021330631.png",
+  star: 4,
+  title: "Caragua Goal",
   at: "Joinville - SC",
-  position: "Iririu",
+  position: "Sumare",
+  scholarUnit: "BRL",
   amount: "306.57",
-  period: "Early Childhood Education - Nursery (0 to 1 year old)",
-  schoolYear: [2024, 2025],
-  shift: ['full', 'morning'],
-  originUnit: "R$",
-  originPrice: 1000,
-  presentUnit: "BRL",
-  presentPrice: 500,
+
 }, 
 {
-  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230111134036974.jpg",
-  star: 1,
-  title: "Santo Antonio College",
+  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20221027192739266.jpg",
+  star: 4,
+  title: "Colegio Objective Hortolandia",
   at: "Joinville - SC",
-  position: "Iririu",
+  position: "Remanso Campineiro",
+  scholarUnit: "BRL",
   amount: "306.57",
-  period: "Early Childhood Education - Nursery (0 to 1 year old)",
-  schoolYear: [2024, 2025],
-  shift: ['full', 'morning'],
-  originUnit: "R$",
-  originPrice: 1000,
-  presentUnit: "BRL",
-  presentPrice: 500,
-}, 
-{
-  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230111134036974.jpg",
-  star: 1,
-  title: "Santo Antonio College",
-  at: "Joinville - SC",
-  position: "Iririu",
-  amount: "306.57",
-  period: "Early Childhood Education - Nursery (0 to 1 year old)",
-  schoolYear: [2024, 2025],
-  shift: ['full', 'morning'],
-  originUnit: "R$",
-  originPrice: 1000,
-  presentUnit: "BRL",
-  presentPrice: 500,
-}, 
-{
-  mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20230111134036974.jpg",
-  star: 1,
-  title: "Santo Antonio College",
-  at: "Joinville - SC",
-  position: "Iririu",
-  amount: "306.57",
-  period: "Early Childhood Education - Nursery (0 to 1 year old)",
-  schoolYear: [2024, 2025],
-  shift: ['full', 'morning'],
-  originUnit: "R$",
-  originPrice: 1000,
-  presentUnit: "BRL",
-  presentPrice: 500,
-}
-];
+
+}];
 
 export default function RootLayout({
   children,
@@ -115,24 +103,19 @@ export default function RootLayout({
       {/* <hr className="text-gray-700 p-0" /> */}
       <div className="flex flex-col bg-slate-100 py-5 space-y-6 items-center">
         <div className="pt-0 flex gap-5 xl:w-[80vw] lg:w-[90vw] pb-5">
-          <Filters />
+          <Filters type = "education" />
           <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
-            {SearchResults.map((result: any, index: number) => 
+            {PopularSchools.map((school: any, index: number) => 
               <div key={index} className="bg-white max-w-sm p-4 border border-gray-200 rounded-lg dark:bg-gray-800 dark:border-gray-700">
-                <SearchResultCard 
-                  key={index}
-                  mark={result.mark}
-                  title={result.title}
-                  star={result.star}
-                  at={result.at}
-                  period={result.period}
-                  position={result.position}
-                  schoolYear={result.schoolYear}
-                  shift={result.shift}
-                  originUnit={result.originUnit}
-                  originPrice={result.originPrice}
-                  presentUnit={result.presentUnit}
-                  presentPrice={result.presentPrice}
+                <PrivateSchoolCard 
+                key={index}
+                star={school.star}
+                mark={school.mark}
+                title={school.title}
+                at={school.at}
+                position={school.position}
+                scholarUnit={school.scholarUnit}
+                amount={school.amount}
                 />
               </div>
             )}
