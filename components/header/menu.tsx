@@ -256,7 +256,9 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
         </div>
       </div>
       <div className="cursor-pointer">
-        <span>Magazine</span>
+        <Link href={'/artigos'}>
+          <span>Magazine</span>
+        </Link>
       </div>
       <div className="cursor-pointer">
         <span>Register your school</span>

@@ -97,7 +97,7 @@ export default function RootLayout({
           {} bags found in {}
         </p>
         <div className="flex justify-around items-center gap-5">
-          <div className="flex items-center relative lg:hidden md:hidden sm:hidden text-gray-700 text-sm">
+          <div className="flex items-center relative text-gray-700 text-sm">
             <select
               name="order"
               className="rounded-full px-8 py-2 border border-slate-300 focus:ring-2 ring-purple-600 focus:outline-purple-600"
