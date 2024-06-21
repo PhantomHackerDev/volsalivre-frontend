@@ -1,22 +1,23 @@
 import React, {useState} from "react";
 import Image from "next/image";
-import Logo from "@/public/logo-melhor-escola.webp";
+import Logo from "@/public/logo_blue.png";
 
 const Header = () => {
     return (
         <>
-            <div className="bg-slate-50 flex justify-between p-3 sticky top-0">
+            <div className="bg-slate-50 flex justify-between p-1 pl-5 sticky top-0 z-10">
                 <div className="flex">
-                    {/* <input type="text" className="rounded-full" /> */}
-                    <Image
-                        src={Logo}
-                        alt="this is logo"
-                        className="w-28 h-8"
-                        width={147}
-                        height={37}
-                    />
+                    <a href="/">
+                        <Image
+                            src={Logo}
+                            alt="this is logo"
+                            className="w-24 h-12"
+                            width={147}
+                            height={37}
+                        />
+                    </a>
                 </div>
-                <div className="flex justify-between pl-20 items-end space-x-4">
+                <div className="flex justify-between pl-20 items-center space-x-4">
                     <input type="search" size={10} id="school" className=" rounded-full focus:outline-none block px-sm py-[5px] ps-5 text-sm text-gray-900 border border-gray-300 bg-gray-50 focus:ring-3 focus:ring-blue-500 focus:border-blue-500 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Escola" required />
                     <div className="relative">
                         <div className="absolute inset-y-0 end-3 flex items-center ps-3 pointer-events-none">

@@ -1,15 +1,9 @@
-"use client";
+import Dashboard from "@/components/maisAlunos/dashboard/page";
 
-import React, { useState } from "react";
-
-const Header = () => {
-  const [menu, setMenu] = useState<number>(0);  
-  
+export default function Home() {
   return (
-    <div className="flex flex-col items-center lg:p-4 p-2 gap-4 bg-[#7D00E6]">
-      hello
-    </div>
+    <main className="flex min-h-screen flex-col">
+      <Dashboard />
+    </main>
   );
-};
-
-export default Header;
+}

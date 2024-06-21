@@ -14,7 +14,7 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
     <div className="hidden lg:flex gap-20 text-white justify-center z-10">
       <div className="relative flex flex-col gap-1 group/como">
         <div className="flex justify-center gap-5 cursor-pointer">
-          <span>How it works</span>
+          <span>Como funciona</span>
           <span className="group-hover/como:rotate-180 transition">
             <svg
               className="w-6 h-6 text-white"
@@ -27,9 +27,9 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
             >
               <path
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 d="m19 9-7 7-7-7"
               />
             </svg>
@@ -47,14 +47,14 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
           >
             <path
               stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
               d="M16.881 16H7.119a1 1 0 0 1-.772-1.636l4.881-5.927a1 1 0 0 1 1.544 0l4.88 5.927a1 1 0 0 1-.77 1.636Z"
             />
           </svg>
           <div className="w-[300px] border border-slate-300 p-5 text-slate-500 bg-white flex flex-col gap-2">
-            <p className="text-xl font-semibold text-slate-600">How it works</p>
+            <p className="text-xl font-semibold text-slate-600">Como funciona</p>
             <div className="flex gap-2">
               <span>
                 <svg
@@ -68,8 +68,8 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
                 >
                   <path
                     stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeWidth="2"
+                    stroke-linecap="round"
+                    stroke-width="2"
                     d="m21 21-3.5-3.5M17 10a7 7 0 1 1-14 0 7 7 0 0 1 14 0Z"
                   />
                 </svg>
@@ -92,9 +92,9 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
                 >
                   <path
                     stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
                     d="M5 11.917 9.724 16.5 19 7.5"
                   />
                 </svg>
@@ -117,7 +117,7 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
                 >
                   <path
                     stroke="currentColor"
-                    strokeWidth="2"
+                    stroke-width="2"
                     d="M11.083 5.104c.35-.8 1.485-.8 1.834 0l1.752 4.022a1 1 0 0 0 .84.597l4.463.342c.9.069 1.255 1.2.556 1.771l-3.33 2.723a1 1 0 0 0-.337 1.016l1.03 4.119c.214.858-.71 1.552-1.474 1.106l-3.913-2.281a1 1 0 0 0-1.008 0L7.583 20.8c-.764.446-1.688-.248-1.474-1.106l1.03-4.119A1 1 0 0 0 6.8 14.56l-3.33-2.723c-.698-.571-.342-1.702.557-1.771l4.462-.342a1 1 0 0 0 .84-.597l1.753-4.022Z"
                   />
                 </svg>
@@ -143,9 +143,9 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
                 >
                   <path
                     stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
                     d="M9.529 9.988a2.502 2.502 0 1 1 5 .191A2.441 2.441 0 0 1 12 12.582V14m-.01 3.008H12M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z"
                   />
                 </svg>
@@ -170,9 +170,9 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
                 >
                   <path
                     fill="currentColor"
-                    fillRule="evenodd"
+                    fill-rule="evenodd"
                     d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z"
-                    clipRule="evenodd"
+                    clip-rule="evenodd"
                   />
                   <path
                     fill="currentColor"
@@ -190,7 +190,7 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
       </div>
       <div className="relative flex flex-col gap-1 group/como">
         <div className="flex justify-center gap-5 cursor-pointer">
-          <span>Education levels</span>
+          <span>Níveis de ensino</span>
           <span className="group-hover/como:rotate-180 transition">
             <svg
               className="w-6 h-6 text-white"
@@ -203,9 +203,9 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
             >
               <path
                 stroke="currentColor"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
                 d="m19 9-7 7-7-7"
               />
             </svg>
@@ -223,9 +223,9 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
           >
             <path
               stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              stroke-width="2"
               d="M16.881 16H7.119a1 1 0 0 1-.772-1.636l4.881-5.927a1 1 0 0 1 1.544 0l4.88 5.927a1 1 0 0 1-.77 1.636Z"
             />
           </svg>
@@ -257,11 +257,13 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
       </div>
       <div className="cursor-pointer">
         <Link href={'/artigos'}>
-          <span>Magazine</span>
+          <span>Revista</span>
         </Link>
       </div>
       <div className="cursor-pointer">
-        <span>Register your school</span>
+        <Link href={'/maisAlunos'}>
+          <span>Cadastre sua escola</span>
+        </Link>
       </div>
     </div>
     <div className={`${menu === 1 ? "flex" : "hidden"} lg:hidden flex-col justify-between text-xl h-[80%]`}>
@@ -275,7 +277,7 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
               className="flex gap-2 cursor-pointer"
               onClick={() => setEduc(!educ)}
             >
-              <p>Education Levels</p>
+              <p>Níveis de ensino</p>
               <span className={`${educ && "rotate-180"} transition`}>
                 <svg
                   className="w-6 h-6 text-slate-500"
@@ -288,9 +290,9 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
                 >
                   <path
                     stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
                     d="m19 9-7 7-7-7"
                   />
                 </svg>
@@ -323,10 +325,10 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
           </div>
         </li>
         <li className="border-b border-slate-300 cursor-pointer hover:bg-slate-50">
-          <span>Magazine</span>
+          <span>Revista</span>
         </li>
         <li className="border-b border-slate-300 cursor-pointer hover:bg-slate-50">
-          <span>Register your school</span>
+          <span>Cadastre sua escola</span>
         </li>
       </ul>
     </div>

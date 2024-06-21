@@ -1,9 +1,11 @@
 import React, {useState} from "react";
+import Image from "next/image";
+import Logo from "@/public/logo.png";
 
 const Footer = () => {
     return (
-        <div className="flex flex-col bg-[#3e3b60] px-24 space-y-28 py-8 text-white">
-            <div className="flex justify-between ">
+        <div className="flex flex-col bg-[#3e3b60] px-6 md:px-24 space-y-8 md:space-y-28 py-8 text-white">
+            <div className="flex flex-col md:flex-row justify-between space-y-8 md:space-y-0 md:space-x-12 ">
                 <div className="flex flex-col space-y-5">
                     <span className="font-semibold text-lg" > Encontre Bolsas</span>
                     <a href="#" className="text-slate-300 hover:text-orange-400 text-xs" >Melhores Escolas de São Paulo</a>
@@ -31,14 +33,20 @@ const Footer = () => {
                     <a href="#" className="text-slate-300 hover:text-orange-400 text-xs" >Blog Gestores</a>
                     <a href="#" className="text-slate-300 hover:text-orange-400 text-xs" >Área do Gestor</a>
                 </div>
-                <div className="flex flex-col space-y-5 items-center">
+                <div className="flex flex-col space-y-5">
                     <span className="font-semibold text-slate-300 text-[10px]" > Parceiro Oficial<br/>Ensino Superior</span>
                     <a href="#" className="text-slate-300 hover:text-orange-400 text-xs" ><img className="" src="https://www.melhorescola.com.br/themes/site/assets/images/logo-querobolsa.png?2" data-src="https://www.melhorescola.com.br/themes/site/assets/images/logo-querobolsa.png?2" data-srcset="" width="160" height="25" alt="Quero Bolsa" srcSet=""/></a>
                 </div>
             </div>
-            <div className="flex flex-row space-x-24 justify-start">
+            <div className="flex flex-col md:flex-row md:space-x-24 space-y-8 md:space-y-0 justify-start">
                 <div className="flex flex-col space-y-5">
-                    <img className="footer-logo" src="https://www.melhorescola.com.br/themes/site/assets/images/assets/logo-melhor-escola.svg" data-src="https://www.melhorescola.com.br/themes/site/assets/images/assets/logo-melhor-escola.svg" data-srcset="" width="153" height="50" alt="Melhor Escola" srcSet="" />
+                    <Image
+                        src={Logo}
+                        alt="this is logo"
+                        className="w-36 h-24"
+                        width={147}
+                        height={37}
+                    />
                 </div>
                 <div className="flex flex-col space-y-2">
                     <span className="font-semibold text-white text-[12px]" >Estamos construindo um grande banco de dados com avaliações e depoimentos de pais e alunos sobre as escolas brasileiras. Participe!</span>
