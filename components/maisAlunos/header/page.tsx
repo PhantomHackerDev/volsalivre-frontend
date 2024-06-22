@@ -5,10 +5,10 @@ import Image from "next/image";
 import Logo from "@/public/logo.png";
 
 interface CommunicateProps {
-    menu: number;
+    // menu: number;
 }
 
-const Header:React.FC<CommunicateProps> = ({menu}) => {
+const Header:React.FC<CommunicateProps> = () => {
     const [isOpen, setIsOpen] = useState<boolean>(false);
     return (
         <>
