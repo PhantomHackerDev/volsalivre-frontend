@@ -135,27 +135,27 @@ const PrivateSchoolCard: React.FC<PrivateSchoolCardProps> = ({
 }) => {
   return (
     <div className="flex flex-col p-5 bg-white rounded-lg justify-between gap-5">
-      <div className="flex justify-center items-center">
+      <div className="flex flex-col md:flex-row justify-center items-center gap-3 md:gap-0">
         <img
           src={mark}
           alt=""
           width={70}
           height={70}
-          className="w-12 h-12 rounded-full"
+          className="w-12 h-auto rounded-full"
         />
-        <p className="text-based font-semibold text-gray-700">{title}</p>
+        <p className="text-[16px] font-semibold text-gray-700 md:ml-3 md:text-xs">{title}</p>
       </div>
-      <div className="flex gap-2">
+      <div className="flex gap-2 justify-center md:justify-start">
         {stars.map((s: any, index: number) => (
           <Star key={index} flag={index < star ? true : false} />
         ))}
         <span>{star}</span>
       </div>
-      <div className="flex flex-col gap-2 text-gray-400">
+      <div className="flex flex-col gap-2 text-gray-400 text-center md:text-left">
         <p>{position}</p>
         <p>{at}</p>
       </div><hr className="p-2"/>
-      <div className="flex space-y-0 flex-col">
+      <div className="flex flex-col space-y-0 text-center md:text-left">
         <p className="pb-0 text-gray-400">sholarships form:</p>
         <p className="pt-0 font-semibold text-gray-700">{scholarUnit} {amount}</p>
       </div>

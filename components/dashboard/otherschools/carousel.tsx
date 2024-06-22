@@ -67,6 +67,17 @@ const CarouselComponent: React.FC = () => {
           slidesPerView={4}
           spaceBetween={10}
           pagination={{ clickable: true }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2, // 2 slides for screens >= 640px
+            },
+            768: {
+              slidesPerView: 3, // 3 slides for screens >= 768px
+            },
+            1024: {
+              slidesPerView: 4, // 4 slides for screens >= 1024px
+            },
+          }}
         >
           {OtherSchools.map((school: any, index: number) => (
             <SwiperSlide key={index}>

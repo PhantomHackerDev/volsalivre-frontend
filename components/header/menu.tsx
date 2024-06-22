@@ -325,10 +325,10 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
           </div>
         </li>
         <li className="border-b border-slate-300 cursor-pointer hover:bg-slate-50">
-          <span>Revista</span>
+          <Link href={'/artigos'}>Revista</Link>
         </li>
         <li className="border-b border-slate-300 cursor-pointer hover:bg-slate-50">
-          <span>Cadastre sua escola</span>
+          <Link href={'/maisAlunos'}>Cadastre sua escola</Link>
         </li>
       </ul>
     </div>

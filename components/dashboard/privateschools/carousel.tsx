@@ -74,12 +74,23 @@ let PrivateSchools = [{
 
 const CarouselComponent: React.FC = () => {
   return (
-    <div>
+    <div className="p-5 bg-gray-100">
       <div className="flex justify-center p-[10px]">
         <Swiper
           slidesPerView={4}
           spaceBetween={10}
           pagination={{ clickable: true }}
+          breakpoints={{
+            640: {
+              slidesPerView: 2, // 2 slides for screens >= 640px
+            },
+            768: {
+              slidesPerView: 3, // 3 slides for screens >= 768px
+            },
+            1024: {
+              slidesPerView: 4, // 4 slides for screens >= 1024px
+            },
+          }}
         >
           {PrivateSchools.map((school: any, index: number) => (
             <SwiperSlide key={index}>
