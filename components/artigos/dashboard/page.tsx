@@ -1,4 +1,7 @@
+'use client';
+
 import React, {useState} from "react";
+import Link from 'next/link'
 
 let article = [
 {
@@ -29,14 +32,24 @@ let article = [
 ]
 
 const Dashboard = () => {
+
+    const showDetail = (e:any) => {
+        console.log(e);
+    }
+
     return (
-        <>
+        <>            
+            <div className="flex flex-col bg-[#3e3b60] ">
+                <div className="flex flex-col justify-between items-center font-semibold text-orange-400 text-[42px] lg:p-9 p-7 gap-4 ">
+                    Revista Melhor Escola
+                </div>
+            </div>
             <div className="flex flex-col md:px-24 px-4 py-10 space-y-14">
                 <div className="flex justify-center md:justify-start">
                     <div className="relative w-full max-w-md">
                         <div className="absolute inset-y-0 right-5 flex items-center pointer-events-none scale-150">
                             <svg className="w-4 h-4 text-gray-500 rotate-90 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
-                                <path className="text-orange-400" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
+                                <path className="text-orange-400" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z"/>
                             </svg>
                         </div>
                         <input 
@@ -47,15 +60,19 @@ const Dashboard = () => {
                 </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 pb-4 h-auto">
                     { article.map((result: any, index: number) =>(
-                        <div key={index} className="flex rounded-sm h-[160px] hover:ring-2 hover:ring-slate-400">
-                            <a href="#" className="flex flex-row p-4 justify-between bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700">
+                        <div onClick={(e: any) => {showDetail(result)}} key={index} className="flex rounded-sm h-[160px] hover:ring-2 hover:ring-slate-400">
+                            <Link
+                                href="/artigos/[title]" 
+                                as={`/artigos/${encodeURIComponent(result.title)}`} 
+                                className="flex flex-row p-4 justify-between bg-white border border-gray-200 rounded-lg shadow md:flex-row md:max-w-xl hover:bg-gray-100 dark:border-gray-700 dark:bg-gray-800 dark:hover:bg-gray-700"
+                            >
                                 <img className=" rounded-md card-img card-article-img w-2/5 " src={result.mark} alt=" Musicalização infantil: o que é, como aplicar e quais benefícios? "/>
                                 <div className="flex flex-col justify-between pt-0 pl-4 items-start leading-normal">
                                     <span className=" text-[14px] tracking-tight text-gray-700 dark:text-white"> {result.title} </span>
                                     <p className="text-xs text-ellipsis text-gray-500 pb-1 overflow-hidden ... ">{result.detail}</p>
                                     <p className="text-xs text-orange-500 underline">Saiba mais</p>
                                 </div>
-                            </a>
+                            </Link>
                         </div>
                     ))}
                 </div>
@@ -65,7 +82,7 @@ const Dashboard = () => {
                 <div className="bg-[#627aad] opacity-90 hover:opacity-100 p-2 pl-12 rounded-tr-xl hover:rounded-r-xl transition-all hover:translate-x-3">
                     <a href="https://www.facebook.com/melhorescola.com.br" className="icon_facebook" target="_blank" rel="noopener noreferrer" aria-label="Visite nossa página no Facebook">
                         <svg className="w-6 h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
-                            <path fill-rule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clip-rule="evenodd"/>
+                            <path fillRule="evenodd" d="M13.135 6H15V3h-1.865a4.147 4.147 0 0 0-4.142 4.142V9H7v3h2v9.938h3V12h2.021l.592-3H12V6.591A.6.6 0 0 1 12.592 6h.543Z" clipRule="evenodd"/>
                         </svg>
                     </a>
                 </div>
@@ -88,5 +105,6 @@ const Dashboard = () => {
         </>
     )
 }
+
 
 export default Dashboard;

@@ -55,7 +55,7 @@ const Footer = () => {
                         <span className="hover:underline">Termos de Uso</span>, da {" "} <span className="hover:underline">Política de Privacidade</span> e <span className="hover:underline"> Política de Cookies.</span></span>
                     </div>
                     <small className="text-slate-300 text-xs font-sans">© Copyright 2013-2024 - Melhor Escola</small>
-                    <small className="text-slate-300 text-xs font-sans">CNPJ: 17.669.221/0001-50   Telefones: 0800 941 9002 - São Paulo: (11) 3522-3837</small>
+                    <small className="text-slate-300 text-xs font-sans">CNPJ: 17.669.221/0001-50   Telefones: (21) 2143-9986 - São Paulo: (11) 3522-3837</small>
                 </div>
             </div>
         </div>
