@@ -40,49 +40,49 @@ const Footer: React.FC = () => {
       </div>
       <div className="lg:flex lg:justify-around lg:gap-5 lg:px-40 px-10 bg-white py-5">
         <div className="flex flex-col gap-10">
-            <p className="text-lg font-semibold">Partners</p>
+            <p className="text-lg font-semibold">Parceiros</p>
             <div className="flex flex-col gap-3">
-                <a href=""><span>I want to be a partner</span></a>
-                <a href=""><span>Blog Managers</span></a>
-                <a href=""><span>Manager Area</span></a>                
+                <a href=""><span>Quero ser parceiro</span></a>
+                <a href="/blog"><span>Blog Gestores</span></a>
+                <a href=""><span>Área do Gestor</span></a>                
             </div>
         </div>
         <div className="flex flex-col gap-10">
             <p className="text-lg font-semibold">
-                Find scholarships
+              Encontre bolsas
             </p>
             <div className="flex flex-col gap-3">
-            <a href=""><span>Best schools in Sao Paulo</span></a>
-            <a href=""><span>Schools by city and neighborhood</span></a>
-            <a href=""><span>Scholarships in schools</span></a>
+            <a href=""><span>Melhores escolas de São Paulo</span></a>
+            <a href=""><span>Escolas por cidade e bairro</span></a>
+            <a href=""><span>Bolsas de estudo em escolas</span></a>
             </div>
         </div>
         <div className="flex flex-col gap-10">
-            <p className="text-lg font-semibold">Insititution</p>
+            <p className="text-lg font-semibold">Institucional</p>
             <div className="flex flex-col gap-3">
-            <a href=""><span>About Best school</span></a>
-            <a href=""><span>Best School Magazine</span></a>
-            <a href=""><span>Work with us</span></a>
-            </div>
-        </div>
-        <div className="flex flex-col gap-10">
-            <p className="text-lg font-semibold">
-                Other scholarships
-            </p>
-            <div className="flex flex-col gap-3">
-            <a href=""><span>Colleges and universites</span></a>
-            <a href=""><span>English schools</span></a>
+            <a href=""><span>Sobre o Melhor Escola</span></a>
+            <a href=""><span>Revista Melhor Escola</span></a>
+            <a href=""><span>Trabalhe </span></a>
             </div>
         </div>
         <div className="flex flex-col gap-10">
             <p className="text-lg font-semibold">
-                Transparency
+              Outras bolsas
             </p>
             <div className="flex flex-col gap-3">
-            <a href=""><span>Terms of use</span></a>
-            <a href=""><span>Privacy Policy</span></a>
-            <a href=""><span>Cookies policy</span></a>
-            <a href=""><span>Press</span></a>
+            <a href=""><span>Faculdades e universidades</span></a>
+            <a href=""><span>Escolas de inglês</span></a>
+            </div>
+        </div>
+        <div className="flex flex-col gap-10">
+            <p className="text-lg font-semibold">
+              Transparência
+            </p>
+            <div className="flex flex-col gap-3">
+            <a href=""><span>Termos de uso</span></a>
+            <a href=""><span>Política de privacidade</span></a>
+            <a href=""><span>Política de cookies</span></a>
+            <a href=""><span>Imprensa</span></a>
             </div>
         </div>
       </div>
