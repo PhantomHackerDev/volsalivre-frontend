@@ -2,7 +2,7 @@
 
 import React, {useState} from "react";
 import Image from "next/image";
-import Logo from "@/public/assets/images/logo_blue.jpg";
+import Logo from "@/public/assets/images/logo_blue.png";
 import Login from "@/components/artigos/login";
 
 
