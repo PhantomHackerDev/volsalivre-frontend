@@ -2,7 +2,7 @@
 
 import React, {useState, useEffect} from "react";
 import Image from "next/image";
-import Logo from "@/public/logo.png";
+import Logo from "@/public/assets/images/logo_common.png";
 
 interface CommunicateProps {
     // menu: number;
@@ -20,7 +20,7 @@ const Header:React.FC<CommunicateProps> = () => {
                         <Image
                             src={Logo}
                             alt="this is logo"
-                            className="w-24 h-14"
+                            className="w-auto h-auto"
                             width={147}
                             height={37}
                         />

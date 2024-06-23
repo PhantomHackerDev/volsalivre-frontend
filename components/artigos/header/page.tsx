@@ -2,7 +2,7 @@
 
 import React, {useState} from "react";
 import Image from "next/image";
-import Logo from "@/public/logo_blue.png";
+import Logo from "@/public/assets/images/logo_blue.jpg";
 import Login from "@/components/artigos/login";
 
 
@@ -17,7 +17,7 @@ const Header = () => {
                         <Image
                             src={Logo}
                             alt="this is logo"
-                            className="w-24 h-12"
+                            className="w-full h-auto"
                             width={147}
                             height={37}
                         />

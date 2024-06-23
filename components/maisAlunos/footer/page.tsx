@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import Image from "next/image";
-import Logo from "@/public/logo.png";
+import Logo from "@/public/assets/images/logo_common.png";
 
 const Footer = () => {
     return (
@@ -10,7 +10,7 @@ const Footer = () => {
                     <Image
                         src={Logo}
                         alt="this is logo"
-                        className="w-36 h-24"
+                        className="w-auto h-auto"
                         width={147}
                         height={37}
                     />

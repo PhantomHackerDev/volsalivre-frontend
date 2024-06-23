@@ -2,7 +2,8 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import Logo from "@/public/logo.png";
+import Logo from "@/public/assets/images/logo_common.png";
+
 
 import SearchList from "./searchList";
 import Communicate from "./communicate";
@@ -16,11 +17,11 @@ const Header = () => {
       <div className={`flex space-y-1 ${menu === 1 && "flex-col fixed top-0 left-0 w-screen h-lvh bg-white lg:w-85% z-20"}`}>
         <div className="lg:flex grid-cols-1 justify-center 2xl:gap-10 gap-2 space-x-5">
           <div className={`${menu === 1 ? 'hidden' : 'flex'} flex-col gap-2`}>
-            <div className={`flex justify-between `}>
+            <div className={`flex justify-between`}>
               <Image
                 src={Logo}
                 alt="this is logo"
-                className="w-28 h-16"
+                className="w-auto h-auto"
                 width={147}
                 height={50}
               />
