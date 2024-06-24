@@ -75,20 +75,23 @@ let PrivateSchools = [{
 const CarouselComponent: React.FC = () => {
   return (
     <div className="p-5 bg-gray-100">
-      <div className="flex justify-center p-[10px]">
-        <Swiper
-          slidesPerView={4}
+      <div className="flex justify-center p-2 lg:p-[10px]">
+      <Swiper
+          slidesPerView={1} // Default to 1 slide for very small screens
           spaceBetween={10}
           pagination={{ clickable: true }}
           breakpoints={{
             640: {
               slidesPerView: 2, // 2 slides for screens >= 640px
+              spaceBetween: 10,
             },
             768: {
               slidesPerView: 3, // 3 slides for screens >= 768px
+              spaceBetween: 10,
             },
             1024: {
               slidesPerView: 4, // 4 slides for screens >= 1024px
+              spaceBetween: 10,
             },
           }}
         >

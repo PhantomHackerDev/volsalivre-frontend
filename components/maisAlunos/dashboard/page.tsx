@@ -9,7 +9,7 @@ const Dashboard = () => {
     return (
         <div className="flex flex-col">
             <div className="bg-[#13171a] flex flex-col w-full h-auto md:h-[1024px]">
-                <div className="absolute w-[300px] md:w-[700px] h-[300px] md:h-[700px] top-[150px] md:top-[250px] left-4 md:left-16 bg-[#242a2e] rotate-45 z-0"></div>
+                <div className="absolute sm:w-auto sm:h-auto w-[300px] md:w-[700px] h-[300px] md:h-[700px] top-[150px] md:top-[250px] left-4 md:left-16 bg-[#242a2e] rotate-45 z-0"></div>
                 <div className="flex flex-col md:flex-row justify-between px-6 md:px-28 pt-20 pb-10 text-white">
                     <div className="flex z-10 flex-col space-y-8">
                         <strong className="text-xs md:text-sm">FAÇA COMO MAIS DE 6.500 GESTORES ESCOLARES</strong>
@@ -28,7 +28,7 @@ const Dashboard = () => {
                         <Image
                             src={Colegio}
                             alt="colegio"
-                            className="w-full h-auto"
+                            className="md:w-full md:h-auto sm:w-full sm:h-auto"
                         />
                     </div>
                 </div>
@@ -132,8 +132,8 @@ const Dashboard = () => {
                                         Captação de alunos ativa com time de vendas especializado.
                                     </p>
                                 </div>
-                                <div className="">
-                                    <a href="#" className="text-slate-300 hover:ring-4 ring-slate-400 border bg-[#ff7e29] hover:ring-orange-400 hover:bg-[#ff7e29] p-3 rounded-full font-semibold text-[14px] md:text-[16px]">Quero me tornar um parceiro</a>
+                                <div className="flex justify-between items-center">
+                                    <a href="#" className="text-slate-300 hover:ring-4 ring-slate-400 border bg-[#ff7e29] hover:ring-orange-400 hover:bg-[#ff7e29] p-3 rounded-full font-semibold text-[14px] md:text-[16px]"><span>Quero me tornar um parceiro</span></a>
                                 </div>
                             </div>
                         </div>

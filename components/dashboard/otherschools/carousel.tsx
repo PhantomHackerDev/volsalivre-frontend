@@ -12,7 +12,7 @@ let OtherSchools = [{
   position: "Iririu",
   at: "Joinville - SC",
   secure: "PRIVATE SCHOOL"
-}, 
+},
 {
   mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20220202203102288.jpg",
   star: 5,
@@ -41,7 +41,7 @@ let OtherSchools = [{
   position: "Guarani Park",
   at: "Sao Paulo - SP",
   secure: "PRIVATE SCHOOL"
-}, 
+},
 {
   mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20191126021330631.png",
   star: 4,
@@ -49,7 +49,7 @@ let OtherSchools = [{
   position: "Sumare",
   at: "Caraguatatuba - SP",
   secure: "PRIVATE SHCOOL"
-}, 
+},
 {
   mark: "https://img.imageboss.me/me/cover:center/48x48/format:auto/20221027192739266.jpg",
   star: 4,
@@ -64,7 +64,7 @@ const CarouselComponent: React.FC = () => {
     <div>
       <div className="flex justify-center p-[10px]">
         <Swiper
-          slidesPerView={4}
+          slidesPerView={1} // Initially show 1 slide on small screens
           spaceBetween={10}
           pagination={{ clickable: true }}
           breakpoints={{

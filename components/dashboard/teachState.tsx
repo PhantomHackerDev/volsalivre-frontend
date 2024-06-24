@@ -4,23 +4,23 @@ import Link from "next/link";
 
 const TeachStage: React.FC = () => {
   return (
-    <div className="flex flex-col bg-white 2xl:w-[70vw] xl:w-[80vw] lg:w-[90vw] px-2">
+    <div className="flex flex-col bg-white 2xl:w-[70vw] xl:w-[80vw] lg:w-[90vw] w-full px-2">
       <div className="flex flex-col space-y-5 gap-5">
         <Image
           src={teachImage}
           alt="this is teach image"
-          className="rounded-xl pb-3 w-[1168px] h-[340px]"
+          className="rounded-xl pb-3 w-full h-auto"
         />
 
         <div className="flex flex-col gap-5 space-y-3 pb-4">
-          <p className="lg:text-2xl font-semibold text-gray-800">
+          <p className="text-lg lg:text-2xl font-semibold text-gray-800">
             Search for the teaching stage
           </p>
           <div className="grid lg:grid-cols-4 lg:gap-10 sm:grid-cols-2 gap-3">
             <Link
               // type="button"
               href="/escola/busca"
-              className="px-6 py-3.5 lg:text-base font-medium text-white inline-flex gap-2 items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg text-center"
+              className="px-4 py-3 lg:px-6 lg:py-3.5 text-sm lg:text-base font-medium text-white inline-flex gap-2 items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg text-center"
             >
               <svg
                 className="text-white"
@@ -43,7 +43,7 @@ const TeachStage: React.FC = () => {
             <Link
               // type="button"
               href="/escola/busca"
-              className="px-6 py-3.5 lg:text-base font-medium text-white inline-flex gap-2 items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg text-center"
+              className="px-4 py-3 lg:px-6 lg:py-3.5 text-sm lg:text-base font-medium text-white inline-flex gap-2 items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg text-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -75,7 +75,7 @@ const TeachStage: React.FC = () => {
             <Link
               // type="button"
               href="/escola/busca"
-              className="px-6 py-3.5 lg:text-base font-medium text-white inline-flex gap-2 items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg text-center"
+              className="px-4 py-3 lg:px-6 lg:py-3.5 text-sm lg:text-base font-medium text-white inline-flex gap-2 items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg text-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -93,7 +93,7 @@ const TeachStage: React.FC = () => {
             <Link
               // type="button"
               href="/escola/busca"
-              className="px-6 py-3.5 lg:text-base font-medium text-white inline-flex gap-2 items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg text-center"
+              className="px-4 py-3 lg:px-6 lg:py-3.5 text-sm lg:text-base font-medium text-white inline-flex gap-2 items-center bg-purple-700 hover:bg-purple-800 focus:ring-4 focus:outline-none focus:ring-purple-300 rounded-lg text-center"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

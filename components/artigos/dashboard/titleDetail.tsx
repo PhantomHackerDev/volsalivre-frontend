@@ -14,8 +14,8 @@ const TitleDetail: React.FC<TitleDetailProps> = ({ title, mark, detail }) => {
 
     return (
         <div className="">
-            <nav className="flex justify-between pt-3 pb-[36px] px-24" aria-label="Breadcrumb">
-                <ol className="inline-flex items-center mb-3 sm:mb-0 gap-2">
+            <nav className="flex flex-col md:flex-row justify-between pt-3 pb-9 px-4 md:px-24" aria-label="Breadcrumb">
+                <ol className="inline-flex items-center text-xs sm:text-sm mb-3 sm:mb-0 gap-2">
                     <li>
                         <a href="/" className="text-[#ff8d39] hover:underline">Melhor Escola</a>
                     </li>
@@ -29,7 +29,7 @@ const TitleDetail: React.FC<TitleDetailProps> = ({ title, mark, detail }) => {
                     </li>
                 </ol>
             </nav>
-            <div className="flex pt-3 justify-center py-5 text-white items-center text-center text-[50px] font-extrabold w-full bg-cover h-[330px]" style={{ backgroundImage: `url(${www})` }} >
+            <div className="flex pt-3 justify-center py-5 text-white items-center text-center text-4xl md:text-5xl font-extrabold w-full bg-cover h-64 md:h-[330px]" style={{ backgroundImage: `url(${www})` }} >
                 <span>{title}</span>
             </div>
             <div className="top-0 space-y-0 -left-12 fixed pt-[160px]">

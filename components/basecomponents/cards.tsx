@@ -143,7 +143,7 @@ const PrivateSchoolCard: React.FC<PrivateSchoolCardProps> = ({
           height={70}
           className="w-12 h-auto rounded-full"
         />
-        <p className="text-[16px] font-semibold text-gray-700 md:ml-3 md:text-xs">{title}</p>
+        <p className="text-[16px] font-semibold text-gray-700 md:ml-3 md:text-xs text-center md:text-left">{title}</p>
       </div>
       <div className="flex gap-2 justify-center md:justify-start">
         {stars.map((s: any, index: number) => (
