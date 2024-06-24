@@ -280,4 +280,63 @@ const PopularSchoolCard: React.FC<PopularSchoolCardProps> = ({ mark }) => {
   )
 };
 
-export { TransformingCard, OtherSchoolsCard, LatestArticleCard, PrivateSchoolCard, SearchResultCard, PopularSchoolCard };
+interface BlogCardProps {
+  img: any;
+  title: string;
+  date: string;
+  env: string;
+  category:string;
+}
+  
+const BlogCard: React.FC<BlogCardProps> = ({img, title, date, env,category}) => {
+  return (
+    <div className="flex flex-col space-y-5">
+      <div className="space-y-3">
+        <p className="text-xl md:text-2xl font-semibold text-gray-900">{title}</p>
+        <div className="flex text-xs text-gray-500 gap-3">
+          <a href="#" className="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M256 48C141.13 48 48 141.13 48 256s93.13 208 208 208s208-93.13 208-208S370.87 48 256 48m96 240h-96a16 16 0 0 1-16-16V128a16 16 0 0 1 32 0v128h80a16 16 0 0 1 0 32"/></svg>
+            <span>{date}</span>
+          </a>
+          <a href="#" className="flex items-center gap-2">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 512 512"><path fill="currentColor" d="M408 96H252.11a23.9 23.9 0 0 1-13.31-4L211 73.41A55.77 55.77 0 0 0 179.89 64H104a56.06 56.06 0 0 0-56 56v24h416c0-30.88-25.12-48-56-48m15.75 352H88.25a56 56 0 0 1-55.93-55.15L16.18 228.11v-.28A48 48 0 0 1 64 176h384.1a48 48 0 0 1 47.8 51.83v.28l-16.22 164.74A56 56 0 0 1 423.75 448m56.15-221.45"/></svg>
+            <span>{category}</span>
+          </a>
+        </div>
+      </div>
+      <div className="flex w-full  overflow-hidden">
+        <img className="rounded-3xl object-contain w-full" src={img} alt="img" />
+      </div>
+      <div className="flex flex-col w-full  items-start space-y-5">
+        <p className="text-gray-500">{env}</p>
+        <button className="text-orange-500 font-bold border-[2px] rounded-full p-3 px-5 hover:bg-orange-500 hover:text-white border-orange-500">LEIA MAIS {"->"} </button>
+      </div>
+    </div>
+  )
+};
+
+interface CategoriesCardProps {
+  name:any;
+}
+
+const CategoriesCard: React.FC<CategoriesCardProps> = ({name}) => {
+  const cateLi: any = [];
+  const length = name.length;
+  for (let i = 0; i < length; i++) {
+      cateLi.push(
+          <li className="border-b">
+              <a className="hover:text-gray-500" href="">{name[i]}</a>
+          </li>
+      )
+  }
+  return (
+    <>
+      <p className="uppercase text-gray-900 font-bold">CATEGORIAS</p>
+      <ul className="flex flex-col text-orange-500 space-y-6">
+          {cateLi}
+      </ul>
+    </>
+  )
+}
+
+export { BlogCard, CategoriesCard, TransformingCard, OtherSchoolsCard, LatestArticleCard, PrivateSchoolCard, SearchResultCard, PopularSchoolCard };
