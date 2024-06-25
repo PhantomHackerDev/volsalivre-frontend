@@ -104,9 +104,9 @@ const SearchList: React.FC<SearchListProps> = ({ menu, setMenu }) => {
       <div
         className={`${
           menu === 1 ? "flex" : "hidden"
-        } flex-col bg-white p-10 z-50 h-[70%]`}
+        } flex-col bg-white p-10 px-[1px] py-2 pb-10 z-50 h-[70%]`}
       >
-        <div className="flex justify-between h-[20%]">
+        <div className="flex justify-between h-[20%] text-gray-700 items-center pr-2">
           <p className="text-3xl font-semibold">Menu</p>
           <span className="cursor-pointer" onClick={() => setMenu(0)}>
             <svg

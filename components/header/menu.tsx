@@ -266,8 +266,8 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
         </Link>
       </div>
     </div>
-    <div className={`${menu === 1 ? "flex" : "hidden"} lg:hidden flex-col justify-between text-xl h-[80%]`}>
-      <ul className="flex flex-col gap-4">
+    <div className={`${menu === 1 ? "flex" : "hidden"} lg:hidden flex-col sm:px-5 justify-between text-xl h-[80%]`}>
+      <ul className="flex flex-col gap-4 text-gray-700 text-[16px] font-semibold">
         <li className="border-b border-slate-300 cursor-pointer hover:bg-slate-50">
           School
         </li>
@@ -332,7 +332,7 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
         </li>
       </ul>
     </div>
-  </>
+    </>
   );
 };
 

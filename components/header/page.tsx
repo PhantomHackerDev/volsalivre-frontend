@@ -14,17 +14,19 @@ const Header = () => {
   
   return (
     <div className="flex flex-col items-center lg:p-4 p-2 gap-4 bg-[#7D00E6]">
-      <div className={`flex space-y-1 ${menu === 1 && "flex-col fixed top-0 left-0 w-screen h-lvh bg-white lg:w-85% z-20"}`}>
+      <div className={`flex ${menu === 1 ? "flex-col fixed top-0 left-0 w-full h-full bg-white lg:w-[85%] z-20" : "space-y-1"}`}>
         <div className="lg:flex grid-cols-1 justify-center 2xl:gap-10 gap-2 space-x-5">
-          <div className={`${menu === 1 ? 'hidden' : 'flex'} flex-col gap-2`}>
+          <div className={`${menu === 1 ? "hidden" : "flex"} flex-col gap-2`}>
             <div className={`flex justify-between`}>
-              <Image
-                src={Logo}
-                alt="this is logo"
-                className="w-auto h-auto"
-                width={147}
-                height={50}
-              />
+              <a href="/">
+                <Image
+                  src={Logo}
+                  alt="this is logo"
+                  className="w-auto h-auto"
+                  width={147}
+                  height={50}
+                />
+              </a>
               {/*  list search menu button start */}
               <button className="block lg:hidden" onClick={() => setMenu(1)}>
                 <span>
@@ -75,13 +77,13 @@ const Header = () => {
               </span>
             </div>
           </div>
-          <div className={`flex flex-col justify-start 2xl:gap-10 lg:gap-2 lg:static`}>
+          <div className={`flex flex-col justify-start 2xl:gap-10 lg:gap-2 ${menu === 1 ? "flex" : "lg:static"}`}>
             <SearchList menu={menu} setMenu={setMenu} />
             <Menu menu={menu} />
           </div>
         </div>
-        <div className="flex">
-          <Communicate menu={menu} />
+        <div className="relative">
+          <Communicate menu={menu} setMenu={setMenu} />
         </div>
       </div>
     </div>
