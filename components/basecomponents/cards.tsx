@@ -324,7 +324,7 @@ const CategoriesCard: React.FC<CategoriesCardProps> = ({name}) => {
   const length = name.length;
   for (let i = 0; i < length; i++) {
       cateLi.push(
-          <li className="border-b">
+          <li key={i} className="border-b">
               <a className="hover:text-gray-500" href="">{name[i]}</a>
           </li>
       )
