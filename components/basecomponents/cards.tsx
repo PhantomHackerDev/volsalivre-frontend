@@ -220,9 +220,9 @@ const SearchResultCard: React.FC<SearchResultCardProps> = ({
           alt=""
           width={70}
           height={70}
-          className="w-12 h-12 rounded-full ring-2 "
+          className="w-10 h-10 rounded-full ring-2 "
         />
-        <p className="text-based font-semibold text-gray-700">{title}</p>
+        <p className="text-based font-semibold text-sm text-gray-700">{title}</p>
       </div>
       <div className="flex gap-1">
         {stars.map((s: any, index: number) => (
@@ -231,11 +231,11 @@ const SearchResultCard: React.FC<SearchResultCardProps> = ({
         <span>{star}</span>
       </div>
       <div className="flex flex-col gap-2 text-gray-400">
-        <p className="text-gray-700">{period}</p>
+        <p className="text-gray-700 text-sm">{period}</p>
         <p className="text-sm">{position}</p>
         <p className="text-sm">{at}</p>
       </div><hr className="p-2"/>
-      <div className="flex flex-col">
+      <div className="flex flex-col text-sm">
         <p>School year</p>
         <span className="flex justify-start">
           {schoolYearArray}
@@ -254,9 +254,13 @@ const SearchResultCard: React.FC<SearchResultCardProps> = ({
         </p>
       </div>
       <div className="flex flex-col">
-        <button type="button" className="text-white bg-orange-500 hover:bg-orange-600 focus:outline-double focus:ring-4 focus:ring-purple-500 font-medium rounded-full text-sm px-5 py-1 text-center me-2 mb-2 dark:focus:ring-yellow-900">
+        <a 
+          // type="button" 
+          href={`/escola/${encodeURIComponent(title)}`}
+          className="text-white py-2 bg-orange-500 hover:bg-orange-600 focus:outline-double focus:ring-4 focus:ring-purple-500 font-medium rounded-full text-sm px-5 text-center me-2 mb-2"
+        >
           See Scholarship
-        </button>
+        </a>
       </div>
     </div>
   )
@@ -339,4 +343,83 @@ const CategoriesCard: React.FC<CategoriesCardProps> = ({name}) => {
   )
 }
 
-export { BlogCard, CategoriesCard, TransformingCard, OtherSchoolsCard, LatestArticleCard, PrivateSchoolCard, SearchResultCard, PopularSchoolCard };
+interface EscolaDetailCardProps {
+  period: string;
+  schoolYear: any;
+  shift: any;
+  originUnit: string;
+  originPrice: number;
+  presentUnit: string;
+  presentPrice: number;
+}
+
+const EscolaDetailCard:React.FC<EscolaDetailCardProps> = ({
+  period,
+  schoolYear,
+  shift,
+  originUnit,
+  originPrice,
+  presentUnit,
+  presentPrice
+}) => {
+  const schoolYearArray: any = [];
+  let yearlength = schoolYear.length;
+  for (let i = 0; i < yearlength; i++) {
+    const element = schoolYear[i];
+    schoolYearArray.push(
+      <div className="flex items-center me-4">
+        <input id="inline-radio" type="radio" value={element} name="inline-radio-group" className="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 focus:ring-blue-500"/>
+        <label htmlFor="inline-radio" className="ms-2 text-sm font-medium text-gray-900">{element}</label>
+      </div>
+)
+  }
+  return (
+    <div className="flex border w-full bg-white rounded-lg p-3 justify-between">
+      <div className="flex flex-col w-full justify-between space-y-3">
+          <div className="flex flex-col space-y-3">
+              <p className="text-[16px] text-gray-700 font-bold"> Ano letivo</p>
+              {/* year */}
+              <div className="flex">
+                  {schoolYearArray}
+              </div>
+              {/* end year */}
+          </div>
+          <div className="flex justify-between items-center gap-5">
+              <div className="flex flex-col justify-between">
+                  <p className="text-[14px] font-semibold"> Série</p>
+                  {/* period */}
+                  <p className="text-xs text-gray-400">{period}</p>
+                  {/* end period */}
+              </div>
+              <div className="flex border border-purple-600 px-3 py-1 rounded-full">
+                  <span className="text-sm hover:text-slate-400"> Alterar </span>
+              </div>
+          </div>
+          <div className="flex justify-between items-center gap-5 pb-2 border-b">
+              <div className="flex flex-col justify-between">
+                  <p className="text-[14px] font-semibold"> Turno</p>
+                  {/* period */}
+                  <p className="text-xs text-gray-400">{shift}</p>
+                  {/* end period */}
+              </div>
+              <div className="flex border border-purple-600 px-3 py-1 rounded-full">
+                  <span className="text-sm hover:text-slate-400"> Alterar </span>
+              </div>
+          </div>
+          <div className="flex justify-start gap-3 text-[12px]">
+            <p className="pb-0 text-gray-400 line-through decoration-gray-500">{originUnit} {originPrice}</p>
+            <p className="pt-0 font-semibold text-gray-700">
+              {presentUnit} {presentPrice} 
+            </p>
+          </div>
+          <div className="flex items-center justify-between">
+            <a href="#" className="bg-orange-500 text-center items-center w-full py-1.5 rounded-full text-gray-200 hover:bg-orange-700">
+              Quero esta bolsa
+            </a>
+          </div>
+      </div>
+  </div>
+  )
+}
+
+export { BlogCard, EscolaDetailCard, CategoriesCard, TransformingCard, OtherSchoolsCard, LatestArticleCard, PrivateSchoolCard, SearchResultCard, PopularSchoolCard };

@@ -92,7 +92,7 @@ export default function RootLayout({
         </Link>
         <span className="pt-2 text-gray-500 text-md" >{`/`} Search</span>
       </div>
-      <div className="flex sm:hidden flex-col lg:flex-row lg:justify-between md:flex-row md:justify-between sm:flex-col gap-10 justify-between xl:w-[80vw] lg:w-[90vw] max-w-screen-xl px-3 w-full">
+      <div className="flex flex-col lg:flex-row lg:justify-between md:flex-row md:justify-between sm:flex-col gap-10 justify-between xl:w-[80vw] lg:w-[90vw] max-w-screen-xl px-3 w-full">
         <p>
           {} bags found in {}
         </p>
