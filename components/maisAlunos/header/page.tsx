@@ -39,22 +39,22 @@ const Header: React.FC<CommunicateProps> = () => {
                 </div>
                 <div className="hidden md:flex md:flex-row justify-between items-center space-x-10">
                     <ul className="flex flex-row justify-between items-center space-x-10">
-                        <li><a href="#advantages" className="text-orange-500 font-semibold hover:border hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]">Vantagens</a></li>
-                        <li><a href="#partners" className="text-orange-500 font-semibold hover:border hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]">Escolas parceiras</a></li>
-                        <li><a href="#choices" className="text-orange-500 font-semibold hover:border hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]">Planos</a></li>
-                        <li><a href="#evidence" className="text-orange-500 font-semibold hover:border hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]">Cases</a></li>
-                        <li><a href="#" className="text-orange-500 font-semibold hover:border hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[18px]">Entrar</a></li>
+                        <li><a href="#advantages" className="text-orange-500 font-semibold hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]">Vantagens</a></li>
+                        <li><a href="#partners" className="text-orange-500 font-semibold hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]">Escolas parceiras</a></li>
+                        <li><a href="#choices" className="text-orange-500 font-semibold hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]">Planos</a></li>
+                        <li><a href="#evidence" className="text-orange-500 font-semibold hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]">Cases</a></li>
+                        <li><a href="#" className="text-orange-500 font-semibold hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[18px]">Entrar</a></li>
                         <li><a className="text-white bg-orange-500 p-3 rounded-full font-semibold text-[16px]">Parceiro</a></li>
                     </ul>
                 </div>
                 {/* Drawer Menu */}
                 <div className={`fixed top-0 left-0 h-full w-full justify-center bg-[#13171a] z-50 transform transition-transform duration-300 ${isOpen ? 'translate-y-[69px]' : '-translate-y-full'}`}>
                     <ul className="flex flex-col items-center space-y-5 p-4">
-                        <li><a href="#advantages" className="text-orange-500 font-semibold hover:border hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]" onClick={() => setIsOpen(false)}>Vantagens</a></li>
-                        <li><a href="#partners" className="text-orange-500 font-semibold hover:border hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]" onClick={() => setIsOpen(false)}>Escolas parceiras</a></li>
-                        <li><a href="#choices" className="text-orange-500 font-semibold hover:border hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]" onClick={() => setIsOpen(false)}>Planos</a></li>
-                        <li><a href="#evidence" className="text-orange-500 font-semibold hover:border hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]" onClick={() => setIsOpen(false)}>Cases</a></li>
-                        <li><a href="#" className="text-orange-500 font-semibold hover:border hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[18px]" onClick={() => setIsOpen(false)}>Entrar</a></li>
+                        <li><a href="#advantages" className="text-orange-500 font-semibold hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]" onClick={() => setIsOpen(false)}>Vantagens</a></li>
+                        <li><a href="#partners" className="text-orange-500 font-semibold hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]" onClick={() => setIsOpen(false)}>Escolas parceiras</a></li>
+                        <li><a href="#choices" className="text-orange-500 font-semibold hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]" onClick={() => setIsOpen(false)}>Planos</a></li>
+                        <li><a href="#evidence" className="text-orange-500 font-semibold hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[15px]" onClick={() => setIsOpen(false)}>Cases</a></li>
+                        <li><a href="#" className="text-orange-500 font-semibold hover:rounded-full hover:bg-[#f3a16b54] p-4 text-[18px]" onClick={() => setIsOpen(false)}>Entrar</a></li>
                         <li><a className="text-white bg-orange-500 p-3 rounded-full font-semibold text-[16px]" onClick={() => setIsOpen(false)}>Parceiro</a></li>
                     </ul>
                 </div>
