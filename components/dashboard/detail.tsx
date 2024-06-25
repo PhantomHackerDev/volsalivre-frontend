@@ -39,7 +39,7 @@ const Detail:React.FC<DetailProps> = ({title}) => {
                         </div>
                         <p className='border bg-orange-500 text-xs rounded-md text-white px-2 py-1'>VAGAS 2025</p>
                     </div>
-                    <div className="flex justify-center lg:flex-row lg:justify-end items-start pl-0 lg:pl-10 space-x-5 mt-5 lg:mt-0">
+                    <div className="flex justify-center lg:flex-row lg:justify-end items-start pl-0 lg:pl-6 lg:space-x-3 md:space-x-5 mt-5 lg:mt-0">
                         <div className="flex flex-col items-center space-y-2">
                             <p className="text-[16px] text-gray-600 space-x-2">
                                 <span className="font-bold text-sm p-[2px] rounded-sm bg-[#ffb005]">4.9</span>
