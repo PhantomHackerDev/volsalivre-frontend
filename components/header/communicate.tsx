@@ -1,7 +1,8 @@
 'use client';
 
-import { useState } from "react";
+import { useState, useRef, useEffect, ReactNode } from "react";
 import Login from "@/components/artigos/login";
+import { MenuTipCard } from "../basecomponents/cards";
 
 
 interface CommunicateProps {
@@ -11,10 +12,17 @@ interface CommunicateProps {
 
 const Communicate:React.FC<CommunicateProps> = ({menu, setMenu}) => {
   const [toenter, setToEnter] = useState<boolean>(false);
+  const [islogin, setIsLogin] = useState<boolean>(false);
+  const [menuShow, setMenuShow] = useState<boolean>(false);
+
+  const toggleEvent = () => {
+    setMenuShow(!menuShow);
+  }
+  
     return (
         <>        
         <div className="hidden lg:flex gap-2 items-start">
-          <div className="flex justify-center gap-2 items-center">
+          <div className={`flex ${islogin?'pt-3':'justify-center'} gap-2 items-center`}>
             <span>
               <svg
                 className="w-6 h-6 text-white"
@@ -56,12 +64,25 @@ const Communicate:React.FC<CommunicateProps> = ({menu, setMenu}) => {
                 />
               </svg>
             </span>
-            <button
-              className="px-4 py-3 rounded-full border border-white hover:bg-violet-800"
-              onClick={() => setToEnter(!toenter)}
-            >
-              <span className="text-white">To Enter</span>
-            </button>
+            {
+              islogin?
+              <>
+                <button 
+                  onClick={toggleEvent}
+                  className="flex rounded-full border bg-white px-1.5 items-center text-sm text-gray-500 space-x-1"
+                >
+                  <p>H</p>
+                </button>
+                { menuShow && <MenuTipCard /> }
+              </>
+              :
+              <button
+                className="px-4 py-3 rounded-full border border-white hover:bg-violet-800"
+                onClick={() => setToEnter(!toenter)}
+              >
+                <span className="text-white">To Enter</span>
+              </button>
+            }
           </div>
         </div>
 
@@ -125,7 +146,7 @@ const Communicate:React.FC<CommunicateProps> = ({menu, setMenu}) => {
             To Enter
           </button>
         </div>
-        <Login setShow={setToEnter} isShow={toenter} />
+        <Login setShow={setToEnter} isLogin={setIsLogin} isShow={toenter} />
         </>
     )
 }

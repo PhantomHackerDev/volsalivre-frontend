@@ -5,10 +5,11 @@ import Link from "next/link";
 
 interface ToEnterProps {
     isShow: boolean;
+    isLogin:any;
     setShow: any;
 }
 
-const ToEnter: React.FC<ToEnterProps> = ({ isShow, setShow }) => {
+const ToEnter: React.FC<ToEnterProps> = ({ isShow, setShow, isLogin }) => {
     const [name, setName] = useState<string>("");
     const [nameVal, setNameVal] = useState<boolean>(false);
     const [cpf, setCPF] = useState<string>("");
@@ -25,7 +26,8 @@ const ToEnter: React.FC<ToEnterProps> = ({ isShow, setShow }) => {
         if (!status) {
             alert("sign Up");
         } else {
-            alert("Login");
+            isLogin(true);
+            setShow(!isShow);
         }
     }
 
@@ -164,18 +166,18 @@ const ToEnter: React.FC<ToEnterProps> = ({ isShow, setShow }) => {
                         </div>
                     </div>
                 </div>
-                <Link
+                {/* <Link
                     href="/meus-dados/[menu]"
                     as = "/meus-dados/meus-dados"
                     // onClick={()=>{handleLogin()}}
                     className="bg-orange-600 text-center col-span-2 w-full text-white py-2 rounded-full hover:bg-orange-700">
                     <span>Criar conta</span>
-                </Link><hr className="col-span-2" />
-                {/* <button
+                </Link><hr className="col-span-2" /> */}
+                <button
                     onClick={()=>{handleLogin()}}
                     className="bg-orange-600 col-span-2 w-full text-white py-2 rounded-full hover:bg-orange-700">
                     <span>Criar conta</span>
-                </button><hr className="col-span-2" /> */}
+                </button><hr className="col-span-2" />
                 <div className="col-span-2 bg-slate-300 p-4 rounded-md">
                     <div className="text-center">
                         <p className="text-gray-700">Já tem uma conta?</p>

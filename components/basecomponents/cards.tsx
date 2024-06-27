@@ -422,4 +422,35 @@ const EscolaDetailCard:React.FC<EscolaDetailCardProps> = ({
   )
 }
 
-export { BlogCard, EscolaDetailCard, CategoriesCard, TransformingCard, OtherSchoolsCard, LatestArticleCard, PrivateSchoolCard, SearchResultCard, PopularSchoolCard };
+const MenuTipCard:React.FC = () => {
+  return (
+    <div className="origin-top-right absolute right-0 mt-48 text-center w-32 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
+    <a
+      href={`/meus-dados/${encodeURIComponent('Meu perfil')}`}
+      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+    >
+      Meu perfil
+    </a>
+    <a
+      href={`/meus-dados/${encodeURIComponent('Meus dados')}`}
+      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+    >
+      Meus dados
+    </a>
+    <a
+      href={`/meus-dados/${encodeURIComponent('Minhas bolsas')}`}
+      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100 border-b"
+    >
+      Minhas bolsas
+    </a>
+    <a
+      href="/"
+      className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+    >
+      Sair
+    </a>
+  </div>
+  )
+}
+
+export { BlogCard, MenuTipCard, EscolaDetailCard, CategoriesCard, TransformingCard, OtherSchoolsCard, LatestArticleCard, PrivateSchoolCard, SearchResultCard, PopularSchoolCard };

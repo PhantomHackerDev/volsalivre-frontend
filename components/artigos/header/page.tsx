@@ -43,7 +43,7 @@ const Header = () => {
                     </button>
                 </div>
             </div>
-            <Login setShow={setToEnter} isShow={toenter} />
+            <Login setShow={setToEnter} isLogin={false} isShow={toenter} />
         </div>
     )
 }
