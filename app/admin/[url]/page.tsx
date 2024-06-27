@@ -1,0 +1,33 @@
+'use client';
+
+import React, {useState} from 'react';
+import {AlunosBoard, EscolaBoard, OfertasBoard, PainelBoard, ServiceBoard} from '@/components/admin/dashboard';
+
+const Page = (url:any) => {
+    const decode_url = decodeURIComponent(url.params.url);
+    const showDashboard: any = [];
+    switch (decode_url) {
+        case 'Painel do Gestor':
+            showDashboard.push( < PainelBoard title={decode_url} key={1}/>);
+            break;
+        case 'Minha Escola':
+            showDashboard.push( <EscolaBoard  title={decode_url} key={1}/>);
+            break;
+        case 'Minhas Ofertas':
+            showDashboard.push( <OfertasBoard  title={decode_url} key={1}/>);
+            break;
+        case 'Meus Alunos':
+            showDashboard.push( <AlunosBoard  title={decode_url} key={1}/>);
+            break;
+        case 'Servios':
+            showDashboard.push( <ServiceBoard  title={decode_url} key={1}/>);
+            break;
+    }
+    return (
+        <div className="flex flex-col bg-gray-200">
+            {showDashboard}
+        </div>
+    )
+}
+
+export default Page;
