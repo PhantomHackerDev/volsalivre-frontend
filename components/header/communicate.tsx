@@ -58,7 +58,7 @@ const Communicate:React.FC<CommunicateProps> = ({menu, setMenu}) => {
             </span>
             <button
               className="px-4 py-3 rounded-full border border-white hover:bg-violet-800"
-              onClick={() => setToEnter(true)}
+              onClick={() => setToEnter(!toenter)}
             >
               <span className="text-white">To Enter</span>
             </button>

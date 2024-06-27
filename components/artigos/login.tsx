@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Link from "next/link";
 
 interface ToEnterProps {
     isShow: boolean;
@@ -163,11 +164,18 @@ const ToEnter: React.FC<ToEnterProps> = ({ isShow, setShow }) => {
                         </div>
                     </div>
                 </div>
-                <button
+                <Link
+                    href="/meus-dados/[menu]"
+                    as = "/meus-dados/meus-dados"
+                    // onClick={()=>{handleLogin()}}
+                    className="bg-orange-600 text-center col-span-2 w-full text-white py-2 rounded-full hover:bg-orange-700">
+                    <span>Criar conta</span>
+                </Link><hr className="col-span-2" />
+                {/* <button
                     onClick={()=>{handleLogin()}}
                     className="bg-orange-600 col-span-2 w-full text-white py-2 rounded-full hover:bg-orange-700">
                     <span>Criar conta</span>
-                </button><hr className="col-span-2" />
+                </button><hr className="col-span-2" /> */}
                 <div className="col-span-2 bg-slate-300 p-4 rounded-md">
                     <div className="text-center">
                         <p className="text-gray-700">Já tem uma conta?</p>
