@@ -35,18 +35,18 @@ let PrivateSchools = [{
 
 const PainelBoard: React.FC<Title> = ({ title }) => {
     return (
-        <div className="grid grid-cols-4 md:px-24 py-10 gap-20">
-            <div className=" flex flex-col justify-start space-y-3">
+        <div className="flex md:flex-row sm:flex-col flex-row md:px-24 py-10 md:space-x-10 sm:space-y-10">
+            <div className=" flex flex-col md:w-[360px] sm:w-auto space-y-3">
                 <p className='text-gray-800 font-semibold text-lg'>{title}</p>
-                <p className='text-gray-800 bg-slate-300 rounded-full flex justify-center items-center py-2'>{title}</p>
+                <p className='text-gray-800 bg-slate-300 rounded-full flex justify-center items-center py-2'><span className='items-center'>{title}</span></p>
             </div>
-            <div className="col-span-3 justify-between w-full space-y-10">
+            <div className=" md:w-full sm:w-auto space-y-10">
                 <div className="flex flex-col bg-white border p-5 rounded-xl gap-3">
                     <p className='text-3xl text-gray-700 font-bold'>Bem-vindo, Escola Teste</p>
-                    <p className='text-gray-400'>Aqui você pode gerenciar o desempenho da página de sua escola, conhecer as estratégias de seus concorrentes e aumentar a captação de alunos.</p>
+                    <p className='sm:w-auto md:w-auto text-gray-400'>Aqui você pode gerenciar o desempenho da página de sua escola, conhecer as estratégias de seus concorrentes e aumentar a captação de alunos.</p>
                 </div>
                 <div className="">
-                    <Swiper
+                    {/* <Swiper
                         slidesPerView={1} // Default to 1 slide for very small screens
                         spaceBetween={10}
                         pagination={{ clickable: true }}
@@ -79,13 +79,13 @@ const PainelBoard: React.FC<Title> = ({ title }) => {
                                 />
                             </SwiperSlide>
                         ))}
-                    </Swiper>
+                    </Swiper> */}
                 </div>
                 <div className="flex flex-col bg-white border p-5 rounded-xl gap-3">
                     <p className='text-3xl text-gray-700 font-bold'>Dados do Mercado</p>
                     <p className='text-gray-400 pb-5 border-b'>Conheça bem o seu mercado, aplique as melhores estratégias de preço e alcance as suas metas de captação.</p>
                     <p>Média por etapa de ensino no meio período <br />Cidade: <strong> Capixaba </strong></p>
-                    <div className="grid grid-cols-2 gap-5">
+                    {/* <div className=" gap-5">
                         <div className="flex items-center justify-center w-full">
                             <label htmlFor="dropzone-file" className="flex flex-col items-center justify-center w-full h-64 border-2 border-gray-300 border-dashed rounded-lg cursor-pointer bg-gray-50 dark:hover:bg-gray-800 dark:bg-gray-700 hover:bg-gray-100 dark:border-gray-600 dark:hover:border-gray-500 dark:hover:bg-gray-600">
                                 <span className='text-lg font-bold'>Disposicao a pagar</span>
@@ -112,7 +112,7 @@ const PainelBoard: React.FC<Title> = ({ title }) => {
                                 <input id="dropzone-file" type="file" className="hidden" />
                             </label>
                         </div>
-                    </div>
+                    </div> */}
                 </div>
             </div>
         </div>
@@ -120,14 +120,14 @@ const PainelBoard: React.FC<Title> = ({ title }) => {
 }
 const EscolaBoard: React.FC<Title> = ({ title }) => {
     return (
-        <div className="grid grid-cols-4 md:px-24 py-10 gap-20">
-            <div className=" flex flex-col justify-start space-y-3">
+        <div className="flex md:flex-row sm:flex-col flex-row md:px-24 py-10 md:space-x-10 sm:space-y-10">
+            <div className=" flex flex-col md:w-[360px] justify-start sm:w-auto space-y-3">
                 <p className='text-gray-800 font-semibold text-lg'>{title}</p>
                 <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Editar dados da escola</button>
                 <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Ver no Melhar Escola</button>
                 <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Ver no Quero Bolsa</button>
             </div>
-            <div className="col-span-3 justify-between w-full space-y-10">
+            <div className=" md:w-full sm:w-auto space-y-10">
                 <div className="flex flex-col bg-white border p-5 rounded-xl gap-3">
                     <p className='text-3xl text-gray-700 font-bold'>Bem-vindo, Escola Teste</p>
                     <p className='text-gray-400'>Aqui você pode gerenciar o desempenho da página de sua escola, conhecer as estratégias de seus concorrentes e aumentar a captação de alunos.</p>
@@ -141,20 +141,31 @@ const EscolaBoard: React.FC<Title> = ({ title }) => {
 }
 const OfertasBoard: React.FC<Title> = ({ title }) => {
     return (
-        <div className="grid grid-cols-4 md:px-24 py-10 gap-20">
-            <div className=" flex flex-col justify-start space-y-3">
-                <p className='text-gray-800 font-semibold text-lg'>{title}</p>
-                <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Editar dados da escola</button>
-                <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Ver no Melhar Escola</button>
-                <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Ver no Quero Bolsa</button>
-            </div>
-            <div className="col-span-3 justify-between w-full space-y-10">
-                <div className="flex flex-col bg-white border p-5 rounded-xl gap-3">
-                    <p className='text-3xl text-gray-700 font-bold'>Bem-vindo, Escola Teste</p>
-                    <p className='text-gray-400'>Aqui você pode gerenciar o desempenho da página de sua escola, conhecer as estratégias de seus concorrentes e aumentar a captação de alunos.</p>
+        <div className="flex  md:px-24  rounded-xl py-10 gap-3">
+            <div className="flex flex-col justify-between p-10 rounded-xl bg-white">
+                <div className=" flex flex-col border-b justify-start space-y-1">
+                    <strong className='text-gray-800 font-semibold text-2xl'>{title}</strong>
+                    <label className='flex py-2 pb-2 text-gary-500'>Aqui voce pode encontrar e editar as vagas disponibilizadas pela sua escola ou cadastrar noves</label>
                 </div>
-                <div className="flex">
-
+                <div className="flex md:flex-row sm:flex-col justify-between pt-10  md:w-full  gap-5">
+                    <div className="flex flex-col md:w-1/2 bg-white border p-5 rounded-xl">
+                        <p className='text-3xl text-gray-700 font-bold'>Paraceria com o Melhor Escola</p>
+                        <p className='text-gray-400'>O valor da mensalidade SEM desconto e pago 50% para o Melhor Escola e 50% para a Instituicao de Ensino. A escola NAO trabalha com matricula.</p>
+                    </div>
+                    <div className="flex flex-col bg-white border p-5 rounded-xl gap-3">
+                        <div className="flex justify-between">
+                            <p className='text-3xl text-gray-700 font-bold'>Renovacao automatica</p>
+                            <div className="">
+                                <label className="inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" value="" className="sr-only peer"/>
+                                    <div className="relative w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-blue-300 dark:peer-focus:ring-blue-800 rounded-full peer dark:bg-gray-700 peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-green-600"></div>
+                                </label>
+                            </div>
+                        </div>
+                        <p className='text-gray-400'>Replique suas ofertas ativas para o ano seguinte. Proxima renovacao</p>
+                        <strong>Maio/2023</strong>
+                        <p className='text-orange-500'>Ver regras</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -162,40 +173,125 @@ const OfertasBoard: React.FC<Title> = ({ title }) => {
 }
 const AlunosBoard: React.FC<Title> = ({ title }) => {
     return (
-        <div className="grid grid-cols-4 md:px-24 py-10 gap-20">
-            <div className=" flex flex-col justify-start space-y-3">
-                <p className='text-gray-800 font-semibold text-lg'>{title}</p>
-                <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Editar dados da escola</button>
-                <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Ver no Melhar Escola</button>
-                <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Ver no Quero Bolsa</button>
-            </div>
-            <div className="col-span-3 justify-between w-full space-y-10">
-                <div className="flex flex-col bg-white border p-5 rounded-xl gap-3">
-                    <p className='text-3xl text-gray-700 font-bold'>Bem-vindo, Escola Teste</p>
-                    <p className='text-gray-400'>Aqui você pode gerenciar o desempenho da página de sua escola, conhecer as estratégias de seus concorrentes e aumentar a captação de alunos.</p>
+        <div className="flex flex-col md:flex-row md:px-24 rounded-xl py-10 gap-3">
+            <div className="flex flex-col justify-between space-y-10 py-10 px-5 rounded-xl">
+                <div className=" flex flex-col border-b justify-start p-5 rounded-lg space-y-1 bg-white">
+                    <strong className='text-gray-800 font-semibold text-2xl'>{title}</strong>
+                    <label className='flex py-2 pb-2 text-gary-500'>Aqui voce tem acesso a toda base de alunos e suas informacoes, como dados, comprovantes, status e entre outros. Utilize o filtro para facilitar a sua busca</label>
                 </div>
-                <div className="flex">
-
+                <div className="flex flex-col pt-10">
+                    <div className="border-b pb-5 border-gray-700">
+                        <p className=' text-2xl'><strong>Alunos Cadastrados</strong></p>
+                    </div>
+                </div>
+                <div className="flex flex-col space-y-2">
+                    <p className='text-gray-500 md:flex sm:hidden'>Buscar por:</p>
+                    <div className="flex md:flex-row sm:flex-col justify-between gap-5">
+                        <div className="flex justify-between items-center gap-3">
+                            <select id="countries" defaultValue={1} className="bg-gray-50 border py-2.5 px-3  border-gray-500 text-gray-900 text-sm rounded-full">
+                                <option value="1">Nome do responsavel</option>
+                                <option value="US">United States</option>
+                                <option value="CA">Canada</option>
+                                <option value="FR">France</option>
+                                <option value="DE">Germany</option>
+                            </select>
+                            <div>
+                                <input type="text" id="first_name" className="bg-gray-50 border py-2.5 px-3  border-gray-500 text-gray-900 text-sm rounded-full" placeholder="John" required />
+                            </div>
+                            <div className="flex justify-between items-center gap-3">
+                                <svg className='text-5xl' xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512"><path className='text-orange-500' fill="currentColor" d="M256 64C150.13 64 64 150.13 64 256s86.13 192 192 192s192-86.13 192-192S361.87 64 256 64m91.31 283.31a16 16 0 0 1-22.62 0l-42.84-42.83a88.08 88.08 0 1 1 22.63-22.63l42.83 42.84a16 16 0 0 1 0 22.62"></path><circle className='text-orange-500' cx={232} cy={232} r={56} fill="currentColor"></circle></svg>
+                                <button className='text-orange-500 border py-1.5 px-3  border-orange-500 rounded-full '>Limpar Filtros</button>
+                            </div>
+                        </div>
+                        <div className="flex md:justify-between md:items-center gap-1">
+                            <p className='text-gray-500'>Filter por:</p>
+                            <button className='text-orange-500 border py-1 px-2 bg-slate-100 border-gray-500 rounded-full '>Regular</button>
+                            <button className='text-orange-500 border py-1 px-2 bg-slate-100 border-gray-500 rounded-full '>Cancelado</button>
+                            <button className='text-orange-500 border py-1 px-2 bg-slate-100 border-gray-500 rounded-full '>Inadimplente</button>
+                        </div>
+                    </div>
+                    <div className="relative overflow-x-auto">
+                        <table className="md:w-full sm:w-auto text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                            <thead className="text-xs text-gray-900 uppercase dark:text-gray-400">
+                                <tr>
+                                    <th scope="col" className="px-6 py-3">
+                                        Nome do Aluno
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Nome do Responsavel
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        CPF do Responsivel
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Serie ou periodo
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Ano
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        Status
+                                    </th>
+                                    <th scope="col" className="px-6 py-3">
+                                        
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr className=" dark:bg-gray-800">
+                                    <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                                        Teste Techhh
+                                    </th>
+                                    <td className="px-6 py-4">
+                                        Michael Vinicius
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        474.116.338-52
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        Educacao Infantil - Bercario(0 a 1 ano - Manha)
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        2o23
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <span className="bg-blue-100 text-blue-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded dark:bg-gray-700 dark:text-blue-400 border border-blue-400 uppercase">regular</span>
+                                    </td>
+                                    <td className="px-6 py-4">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512"><circle className='text-orange-500' cx={256} cy={256} r={48} fill="currentColor"></circle><circle className='text-orange-500' cx={256} cy={416} r={48} fill="currentColor"></circle><circle className='text-orange-500' cx={256} cy={96} r={48} fill="currentColor"></circle></svg>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
-        </div>    )
+        </div>
+    )
 }
 const ServiceBoard: React.FC<Title> = ({ title }) => {
     return (
-        <div className="grid grid-cols-4 md:px-24 py-10 gap-20">
-            <div className=" flex flex-col justify-start space-y-3">
+        <div className="flex md:flex-row sm:flex-col flex-row md:px-24 py-10 md:space-x-10 sm:space-y-10">
+            <div className="flex flex-col md:w-[360px] justify-start sm:w-auto space-y-3">
                 <p className='text-gray-800 font-semibold text-lg'>{title}</p>
-                <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Editar dados da escola</button>
-                <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Ver no Melhar Escola</button>
-                <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Ver no Quero Bolsa</button>
+                <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Empresas Parceiras</button>
+                <button className='hover:text-gray-800 hover:bg-slate-300 hover:rounded-full flex justify-center items-center py-2 text-orange-500'>Solucoes Complementares</button>
             </div>
-            <div className="col-span-3 justify-between w-full space-y-10">
+            <div className="md:w-full sm:w-auto space-y-10">
                 <div className="flex flex-col bg-white border p-5 rounded-xl gap-3">
-                    <p className='text-3xl text-gray-700 font-bold'>Bem-vindo, Escola Teste</p>
-                    <p className='text-gray-400'>Aqui você pode gerenciar o desempenho da página de sua escola, conhecer as estratégias de seus concorrentes e aumentar a captação de alunos.</p>
+                    <p className='text-3xl text-gray-700 font-bold'>Empresas Parceiras</p>
+                    <p className='text-gray-400'>Parceiras educationais que podem ajudar a sua istituicao de ensino.</p>
                 </div>
-                <div className="flex">
-
+                <div className="flex justify-between border rounded-xl p-5 bg-white gap-10">
+                    <img src="" alt="no image" />
+                    <div className="flex flex-col justify-between gap-5">
+                        <strong>Acelera Cash</strong>
+                        <p>Mensalidades em dia e voce no controle. Com o Acelera Cash, sua escola pode customizar seu produto financeiro e assim 
+                            focar 100% no que realmente importa: Educar e Transformar Vidas!
+                        </p>
+                        <p>Condicoes diferenciadas para parceiros Melhor Escola!</p>
+                        <button className='py-2 px-3 items-start text-orange-500 border border-orange-500 rounded-full'>Conhecer a Aceiera Cash</button>
+                    </div>
                 </div>
             </div>
         </div>
