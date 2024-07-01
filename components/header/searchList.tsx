@@ -17,7 +17,7 @@ const SearchList: React.FC<SearchListProps> = ({ menu, setMenu }) => {
   const [school, setSchool] = useState<string>("");  
   return (
     <>
-      <div className="flex flex-wrap items-center rounded-full bg-white my-2 2xl:w-[50vw] xl:w-[60vw] lg:w-[70vw] md:w-[97vw] sm:w-[96vw] w-[94vw]">
+      <div className="flex flex-wrap items-center rounded-full bg-white my-1.5 2xl:w-[40vw] xl:w-[50vw] lg:w-[60vw] md:w-[87vw] sm:w-[86vw] w-[74vw]">
         <SearchButton
           disp={0}
           className={`lg:flex hidden flex-col relative ${

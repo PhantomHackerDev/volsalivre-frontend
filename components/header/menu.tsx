@@ -11,7 +11,7 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
   const [educ, setEduc] = useState<boolean>(false);
   return (
     <>
-    <div className="hidden lg:flex gap-20 text-white justify-center z-10">
+    {/* <div className="hidden lg:flex gap-20 text-white justify-center z-10">
       <div className="relative flex flex-col gap-1 group/como">
         <div className="flex justify-center gap-5 cursor-pointer">
           <span>Como funciona</span>
@@ -265,7 +265,7 @@ const Menu:React.FC<MenuProps> = ({menu}) => {
           <span>Cadastre sua escola</span>
         </Link>
       </div>
-    </div>
+    </div> */}
     <div className={`${menu === 1 ? "flex" : "hidden"} lg:hidden flex-col sm:px-5 justify-between text-xl h-[80%]`}>
       <ul className="flex flex-col gap-4 text-gray-700 text-[16px] font-semibold">
         <li className="border-b border-slate-300 cursor-pointer hover:bg-slate-50">

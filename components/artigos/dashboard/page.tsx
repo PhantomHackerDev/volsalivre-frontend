@@ -40,7 +40,7 @@ const Dashboard = () => {
     return (
         <>            
             <div className="flex flex-col bg-[#3e3b60] ">
-                <div className="flex flex-col justify-between items-center font-semibold text-orange-400 text-[42px] lg:p-9 p-7 gap-4 ">
+                <div className="flex flex-col justify-between items-center text-center font-semibold text-orange-400 text-[42px] lg:p-9 p-7 gap-4 ">
                     Revista Melhor Escola
                 </div>
             </div>
