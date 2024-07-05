@@ -5,6 +5,18 @@ import React from 'react';
 import Login from "@/components/artigos/login";
 import { MenuTipCard } from "../basecomponents/cards";
 
+
+import {
+  decrement,
+  increment,
+  incrementAsync,
+  incrementByAmount,
+  incrementIfOdd,
+  selectCount,
+  selectStatus,
+} from "@/lib/features/counter/counterSlice";
+
+import { useAppDispatch, useAppSelector } from '@/lib/hooks';
 import axios from "axios";
 
 interface CommunicateProps {
@@ -17,18 +29,19 @@ const Communicate:React.FC<CommunicateProps> = ({menu, setMenu}) => {
   const [islogin, setIsLogin] = useState<boolean>(false);
   const [menuShow, setMenuShow] = useState<boolean>(false);
   
+
+  const dispatch = useAppDispatch();
+  const count = useAppSelector(selectCount);
+  const status = useAppSelector(selectStatus);
+  const [incrementAmount, setIncrementAmount] = useState("2");
+
+  const incrementValue = Number(incrementAmount) || 0;
+
+console.log(count);
+
+
   const toggleEvent = () => {
     setMenuShow(!menuShow);
-  }
-
-  const login = () => {
-    axios.get('http://localhost:5000/api/users/test')
-      .then(res => {
-        console.log(res);
-      })
-      .catch(error => {
-        console.error(error);
-      });
   }
 
   return (
@@ -37,9 +50,8 @@ const Communicate:React.FC<CommunicateProps> = ({menu, setMenu}) => {
         <div className={`flex ${islogin?'pt-3':'justify-center'} gap-2 items-center`}>
           <button 
             onClick={() => {
-              // dispatch(increment());
-              console.log('2');
-              login()
+              dispatch(increment());
+              // console.log('2');
             }}
           >
             <span>
@@ -67,8 +79,8 @@ const Communicate:React.FC<CommunicateProps> = ({menu, setMenu}) => {
           </button>
           <button
             onClick={() => {
-              // dispatch(decrement());
-              console.log('q');
+              dispatch(decrement());
+              // console.log('q');
               
             }}
           >
