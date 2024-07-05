@@ -199,7 +199,7 @@ const SearchResultCard: React.FC<SearchResultCardProps> = ({
   for (let i = 0; i < shiftlength; i++) {
     const element = shift[i];
     shiftArray.push(
-      <button type="button" className="text-purple-700 border rounded-full border-purple-700 hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium text-sm px-4 py-1 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
+      <button key={i} type="button" className="text-purple-700 border rounded-full border-purple-700 hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium text-sm px-4 py-1 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
         {element}
       </button>
     )
@@ -207,7 +207,7 @@ const SearchResultCard: React.FC<SearchResultCardProps> = ({
   for (let i = 0; i < yearlength; i++) {
     const element = schoolYear[i];
     schoolYearArray.push(
-      <button type="button" className="text-purple-700 border rounded-full border-purple-700 hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium text-sm px-3 py-1 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
+      <button key={i} type="button" className="text-purple-700 border rounded-full border-purple-700 hover:bg-slate-200 focus:ring-4 focus:outline-none focus:ring-purple-300 font-medium text-sm px-3 py-1 text-center me-2 mb-2 dark:border-purple-400 dark:text-purple-400 dark:hover:text-white dark:hover:bg-purple-500 dark:focus:ring-purple-900">
         {element}
       </button>
     )
@@ -241,23 +241,23 @@ const SearchResultCard: React.FC<SearchResultCardProps> = ({
           {schoolYearArray}
         </span>
         <p>Shift</p>
-        <span className="flex justify-start">
+        {/* <span className="flex justify-start">
           {shiftArray}
-        </span>
+        </span> */}
       </div>
-      <div className="flex flex-col">
+      <div className="flex justify-between items-center">
         <p className="pb-0 text-gray-400 line-through decoration-gray-500">{originUnit} {originPrice}</p>
         <p className="pt-0 font-semibold text-gray-700">
           {presentUnit} {presentPrice} 
-          <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
-          </span>
+          {/* <span className="bg-green-100 text-green-800 text-xs font-medium me-2 px-2.5 py-0.5 rounded-full dark:bg-green-900 dark:text-green-300">
+          </span> */}
         </p>
       </div>
       <div className="flex flex-col">
         <a 
           // type="button" 
           href={`/escola/${encodeURIComponent(title)}`}
-          className="text-white py-2 bg-orange-500 hover:bg-orange-600 focus:outline-double focus:ring-4 focus:ring-purple-500 font-medium rounded-full text-sm px-5 text-center me-2 mb-2"
+          className="text-white py-2 bg-orange-500 hover:bg-orange-600 focus:outline-double focus:ring-4 focus:ring-purple-500 font-medium rounded-full text-sm px-5 text-center me-2"
         >
           See Scholarship
         </a>

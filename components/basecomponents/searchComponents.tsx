@@ -570,17 +570,18 @@ const SearchRadius: React.FC<SearchButtonProps> = ({
           className="w-full h-2 bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 accent-indigo-600" 
           placeholder="Enter amount" />
       </> : 
-      <>
-        <label htmlFor="" className="font-semibold text-sm">Monthly fee</label>
-        <p>R$ 1.00 to R$ 10000.00</p>
-        <input 
-          type="range" 
-          onChange={(e) => setRadiusValue(e.target.value)} 
-          value = {radiusValue} 
-          id="currency-input" 
-          className="w-full h-2 bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 accent-indigo-600" 
-          placeholder="Enter amount" />
-      </>
+      ''
+      // <>
+      //   <label htmlFor="" className="font-semibold text-sm">Monthly fee</label>
+      //   <p>R$ 1.00 to R$ 10000.00</p>
+      //   <input 
+      //     type="range" 
+      //     onChange={(e) => setRadiusValue(e.target.value)} 
+      //     value = {radiusValue} 
+      //     id="currency-input" 
+      //     className="w-full h-2 bg-gray-200 rounded-lg cursor-pointer dark:bg-gray-700 accent-indigo-600" 
+      //     placeholder="Enter amount" />
+      // </>
       }
     </div>
   )

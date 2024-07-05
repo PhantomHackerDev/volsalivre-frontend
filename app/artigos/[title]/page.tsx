@@ -1,6 +1,9 @@
 'use client';
 
 import TitleDetail from "@/components/artigos/dashboard/titleDetail";
+import "@/app/globals.css";
+import Header from "@/components/header/page";
+import Footer from "@/components/footer/page";
 
 let data = {
   mark:'https://img.imageboss.me/me/cdn/quality:50/20240619170345659.jpg',
@@ -11,9 +14,13 @@ const Home = (title:any) => {
   const titleName = decodeURIComponent(title.params.title) 
   
   return (
-    <main className="flex min-h-screen flex-col">
-      <TitleDetail title = {titleName} mark={data.mark} detail={data.detail} />
-    </main>
+    <>
+      <Header />
+      <main className="flex min-h-screen flex-col">
+        <TitleDetail title = {titleName} mark={data.mark} detail={data.detail} />
+      </main>
+      <Footer />
+    </>
   );
 }
 

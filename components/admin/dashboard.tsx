@@ -47,42 +47,6 @@ const PainelBoard: React.FC<Title> = ({ title }) => {
                     <p className="text-2xl md:text-3xl text-gray-700 font-bold">Bem-vindo, Escola Teste</p>
                     <p className="text-gray-400">Aqui você pode gerenciar o desempenho da página de sua escola, conhecer as estratégias de seus concorrentes e aumentar a captação de alunos.</p>
                 </div>
-                <div>
-                    {/* <Swiper
-                slidesPerView={1} // Default to 1 slide for very small screens
-                spaceBetween={10}
-                pagination={{ clickable: true }}
-                breakpoints={{
-                    640: {
-                        slidesPerView: 1, // 2 slides for screens >= 640px
-                        spaceBetween: 10,
-                    },
-                    768: {
-                        slidesPerView: 1, // 3 slides for screens >= 768px
-                        spaceBetween: 10,
-                    },
-                    1024: {
-                        slidesPerView: 1, // 4 slides for screens >= 1024px
-                        spaceBetween: 10,
-                    },
-                }}
-            >
-                {PrivateSchools.map((school: any, index: number) => (
-                    <SwiperSlide key={index}>
-                        <PrivateSchoolCard
-                            key={index}
-                            star={school.star}
-                            mark={school.mark}
-                            title={school.title}
-                            at={school.at}
-                            position={school.position}
-                            scholarUnit={school.scholarUnit}
-                            amount={school.amount}
-                        />
-                    </SwiperSlide>
-                ))}
-            </Swiper> */}
-                </div>
                 <div className="flex flex-col bg-white border p-5 rounded-xl gap-3">
                     <p className="text-2xl md:text-3xl text-gray-700 font-bold">Dados do Mercado</p>
                     <p className="text-gray-400 pb-5 border-b">Conheça bem o seu mercado, aplique as melhores estratégias de preço e alcance as suas metas de captação.</p>

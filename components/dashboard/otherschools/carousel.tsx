@@ -82,7 +82,7 @@ const CarouselComponent: React.FC = () => {
           {OtherSchools.map((school: any, index: number) => (
             <SwiperSlide key={index}>
               <OtherSchoolsCard
-                key={index}
+                // key={index}
                 star={school.star}
                 mark={school.mark}
                 title={school.title}

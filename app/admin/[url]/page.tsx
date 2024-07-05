@@ -2,6 +2,9 @@
 
 import React, {useState} from 'react';
 import {AlunosBoard, EscolaBoard, OfertasBoard, PainelBoard, ServiceBoard} from '@/components/admin/dashboard';
+import Header from "@/components/admin/header";
+import Footer from "@/components/maisAlunos/footer/page";
+import "@/app/globals.css";
 
 const Page = (url:any) => {
     const decode_url = decodeURIComponent(url.params.url);
@@ -24,9 +27,13 @@ const Page = (url:any) => {
             break;
     }
     return (
-        <div className="flex flex-col bg-gray-200">
-            {showDashboard}
-        </div>
+        <>
+            <Header />
+            <div className="flex flex-col bg-gray-200">
+                {showDashboard}
+            </div>
+            <Footer />
+        </>
     )
 }
 

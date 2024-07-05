@@ -1,7 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import React, { useState } from "react";
 import Link from "next/link";
+import { useDispatch, useSelector } from 'react-redux';
+import axios from "axios";
+import { BASEURL } from "@/lib/type";
 
 interface ToEnterProps {
     isShow: boolean;
@@ -24,10 +27,36 @@ const ToEnter: React.FC<ToEnterProps> = ({ isShow, setShow, isLogin }) => {
 
     const handleLogin = () => {
         if (!status) {
-            alert("sign Up");
+            const newUserData = {
+                name: name,
+                email: email,
+                cpf: cpf,
+                password: password,
+                password2: password
+            }
+            axios.post(`${BASEURL}/api/users/register`, newUserData)
+                .then(res => {
+                    console.log(res.data);                    
+                    isLogin(true);
+                    setShow(!isShow);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
         } else {
-            isLogin(true);
-            setShow(!isShow);
+            const data = {
+                email: login,
+                password: password
+            }
+            axios.post(`${BASEURL}/api/users/login`, data)
+                .then(res => {
+                    console.log(res.data);                    
+                    isLogin(true);
+                    setShow(!isShow);
+                })
+                .catch(error => {
+                    console.log(error);
+                })
         }
     }
 
@@ -155,7 +184,7 @@ const ToEnter: React.FC<ToEnterProps> = ({ isShow, setShow, isLogin }) => {
                         </label><span className="text-gray-600 text-xs"> (obrigatório) </span>
                         <div className="relative">
                             <input
-                                type="text"
+                                type="password"
                                 aria-describedby="filled_success_help"
                                 className="block text-sm rounded-full px-16 py-2 w-full text-gray-900 bg-gray-50 border focus:outline-purple-500 border-slate-500 appearance-none peer"
                                 placeholder="Digite sua senha"
