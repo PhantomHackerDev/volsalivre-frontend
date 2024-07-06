@@ -1,57 +1,41 @@
-'use client';
+"use client";
 
 import { useState, useRef, useEffect, ReactNode } from "react";
-import React from 'react';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import Login from "@/components/artigos/login";
 import { MenuTipCard } from "../basecomponents/cards";
-
-
-import {
-  decrement,
-  increment,
-  incrementAsync,
-  incrementByAmount,
-  incrementIfOdd,
-  selectCount,
-  selectStatus,
-} from "@/lib/features/counter/counterSlice";
-
-import { useAppDispatch, useAppSelector } from '@/lib/hooks';
-import axios from "axios";
+import { useAppDispatch, RootState } from "@/lib/store";
 
 interface CommunicateProps {
-    menu: number;
-    setMenu: any;
+  menu: number;
+  setMenu: any;
 }
 
-const Communicate:React.FC<CommunicateProps> = ({menu, setMenu}) => {
+const Communicate: React.FC<CommunicateProps> = ({ menu, setMenu }) => {
   const [toenter, setToEnter] = useState<boolean>(false);
-  const [islogin, setIsLogin] = useState<boolean>(false);
   const [menuShow, setMenuShow] = useState<boolean>(false);
-  
 
-  const dispatch = useAppDispatch();
-  const count = useAppSelector(selectCount);
-  const status = useAppSelector(selectStatus);
-  const [incrementAmount, setIncrementAmount] = useState("2");
-
-  const incrementValue = Number(incrementAmount) || 0;
-
-console.log(count);
-
+  const token = useSelector((state: RootState) => state.auth.token);
+  const status = useSelector((state: RootState) => state.auth.status);
 
   const toggleEvent = () => {
     setMenuShow(!menuShow);
-  }
+  };
+
+  const loginStatus = localStorage.token;
 
   return (
-      <>        
+    <>
       <div className="hidden lg:flex gap-2 items-start">
-        <div className={`flex ${islogin?'pt-3':'justify-center'} gap-2 items-center`}>
-          <button 
+        <div
+          className={`flex ${
+            loginStatus ? "pt-3" : "justify-center"
+          } gap-2 items-center`}
+        >
+          <button
             onClick={() => {
-              dispatch(increment());
-              // console.log('2');
+              console.log("2");
             }}
           >
             <span>
@@ -79,9 +63,7 @@ console.log(count);
           </button>
           <button
             onClick={() => {
-              dispatch(decrement());
-              // console.log('q');
-              
+              console.log("q");
             }}
           >
             <span>
@@ -104,31 +86,34 @@ console.log(count);
               </svg>
             </span>
           </button>
-          {
-            islogin?
+          {loginStatus ? (
             <>
-              <button 
+              <button
                 onClick={toggleEvent}
                 className="flex rounded-full border bg-white px-1.5 items-center text-sm text-gray-500 space-x-1"
               >
                 <p>H</p>
               </button>
-              { menuShow && <MenuTipCard /> }
+              {menuShow && <MenuTipCard />}
             </>
-            :
+          ) : (
             <button
               className="px-4 py-2.5 rounded-full border border-white hover:bg-violet-800"
               onClick={() => setToEnter(!toenter)}
             >
               <span className="text-white">To Enter</span>
             </button>
-          }
+          )}
         </div>
       </div>
 
-      <div className={`${menu === 1 ? "flex" : "hidden"} p-10 flex-col justify-between gap-2`}>
+      <div
+        className={`${
+          menu === 1 ? "flex" : "hidden"
+        } p-10 flex-col justify-between gap-2`}
+      >
         <div className="flex flex-col justify-start">
-          <button className="flex gap-5 px-5 py-3 justify-start focus:border-2 border-purple-400 focus:shadow-inner">
+          <button className="flex gap-5 py-3 justify-start items-center border-purple-400">
             <span className="bg-orange-600 rounded-full p-0.5">
               <svg
                 className="w-8 h-8 text-white"
@@ -150,7 +135,7 @@ console.log(count);
             </span>
             <span className="text-orange-600">(21) 2143-9986</span>
           </button>
-          <button className="flex gap-5 items-center px-5 focus:border-2 border-purple-400 focus:shadow-inner">
+          <button className="flex gap-5 py-3 justify-start items-center border-purple-400">
             <span className="">
               <svg
                 className="w-10 h-10 tex-xl text-green-500 dark:text-white"
@@ -175,20 +160,57 @@ console.log(count);
             </span>
             <div className="flex flex-col gap-1">
               <span>Talk to us at</span>
-              <a href="#" className="text-orange-500">WhatsApp</a>
+              <a href="#" className="text-orange-500">
+                WhatsApp
+              </a>
             </div>
           </button>
         </div>
-        <button
-          className="sm:mx-16 py-2 sm:px-10 text-xl rounded-full bg-orange-50 hover:bg-orange-100 border border-purple-400"
-          onClick={() => {setToEnter(!toenter); setMenu(0)}}
-        >
-          To Enter
-        </button>
+        {loginStatus ? (
+          <button className="flex gap-5 pt-10 justify-start items-center"
+            onClick={() => {
+              localStorage.removeItem('token');
+              setMenu(0);
+            }}
+          >
+            <span>
+              <svg
+                className="text-4xl"
+                xmlns="http://www.w3.org/2000/svg"
+                width="1em"
+                height="1em"
+                viewBox="0 0 512 512"
+              >
+                <path
+                  className="text-purple-500"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={32}
+                  d="M304 336v40a40 40 0 0 1-40 40H104a40 40 0 0 1-40-40V136a40 40 0 0 1 40-40h152c22.09 0 48 17.91 48 40v40m64 160l80-80l-80-80m-192 80h256"
+                ></path>
+              </svg>
+            </span>
+            <span className="text-purple-500">
+              Sair
+            </span>
+          </button>
+        ) : (
+          <button
+            className="sm:mx-16 py-2 sm:px-10 text-xl rounded-full bg-orange-50 hover:bg-orange-100 border border-purple-400"
+            onClick={() => {
+              setToEnter(!toenter);
+              setMenu(0);
+            }}
+          >
+            To Enter
+          </button>
+        )}
       </div>
-      <Login setShow={setToEnter} isLogin={setIsLogin} isShow={toenter} />
-      </>
-  )
-}
+      <Login setShow={setToEnter}  isShow={toenter} />
+    </>
+  );
+};
 
 export default Communicate;

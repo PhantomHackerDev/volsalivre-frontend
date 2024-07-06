@@ -155,11 +155,9 @@ export default function RootLayout({
                     ></path>
                 </svg>
                 </span>
-                {/* <span className="text-purple-600 font-semibold items-center">Map</span> */}
             </div>
             </div>
         </div>
-        {/* <hr className="text-gray-700 p-0" /> */}
         <div className="pt-0 flex flex-row gap-5 xl:w-[80vw] lg:w-[90vw] max-w-screen-xl px-3 pb-5">
             <div className="max-[1200px]:hidden">
             <Filters type="search" />

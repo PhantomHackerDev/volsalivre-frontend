@@ -1,5 +1,6 @@
 import { log } from "console";
 import { start } from "repl";
+import { toast } from 'react-toastify';
 
 const stars = [0, 0, 0, 0, 0];
 
@@ -444,7 +445,11 @@ const MenuTipCard:React.FC = () => {
       Minhas bolsas
     </a>
     <a
-      href="/"
+      onClick={() => {
+        localStorage.removeItem('token');
+        window.location.href='/';
+        toast.success("Successfully logged out....")
+      }}
       className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
     >
       Sair

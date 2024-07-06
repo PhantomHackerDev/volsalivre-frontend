@@ -24,7 +24,7 @@ const Dashboard: React.FC<TitleUrl> = ({title_url}) =>{
                 </ol>
             </nav>
             {
-                menuStatus !== 'meus-dados' ? 
+                menuStatus === 'Meu perfil' ? 
                 <>
                     <div className="relative overflow-x-auto pt-3 shadow-md sm:rounded-lg">
                         <table className="w-full text-sm text-center rtl:text-right">
@@ -83,7 +83,7 @@ const Dashboard: React.FC<TitleUrl> = ({title_url}) =>{
                         </div>
                     </div>
                     <div className={`grid sm:grid-cols-1 ${menuStatus ? 'md:grid-cols-3':'md:grid-cols-2'} md:pt-5 gap-3 pt-3 pb-5 md:pr-36 border-b`}>
-                        { menuStatus ? 
+                        { menuStatus === 'Meus dados' ? 
                             <>
                                 <div className="md:col-span-2">
                                     <label htmlFor="name" className="block mb-2 text-sm text-gray-600">Nome</label>
@@ -121,7 +121,7 @@ const Dashboard: React.FC<TitleUrl> = ({title_url}) =>{
                     </div>
                     <div className={`grid sm:grid-cols-1 ${menuStatus ? '':'border-b'} text-sm text-gray-600 md:grid-cols-3 md:pt-5 gap-3 pt-3 pb-5 md:pr-36`}>
                         {
-                            menuStatus ?
+                            menuStatus === 'Meus dados' ?
                             <>
                                 <div>
                                     <label htmlFor="cep" className="block mb-2">CEP</label>
@@ -182,42 +182,8 @@ const Dashboard: React.FC<TitleUrl> = ({title_url}) =>{
                         }
                     </div>
                     {
-                        menuStatus ? 
+                        menuStatus === 'Meus dados' ? 
                         <>
-                            <div className="flex flex-col  pt-3 pb-2 justify-between">
-                                <p className="text-gray-500 justify-between text-4xl pb-3 md:w-full border-b">Outras informações</p>
-                            </div>
-                            <div className="grid sm:grid-cols-1 md:grid-cols-3 md:pt-5 gap-3 pt-3 md:pr-36">
-                                <div className="">
-                                    <label htmlFor="Renda" className="block mb-2 text-sm font-medium text-gray-600 dark:text-white">Renda familiar</label>
-                                    <div className="relative mb-6">
-                                        <div className="absolute  inset-y-0 bg-gray-200 rounded-full start-0 flex  items-center justify-between ps-6 pointer-events-none">
-                                            <p className="text-gray-500 flex">RS</p>
-                                        </div>
-                                        <div className="absolute inset-y-0 bg-gray-200 rounded-full end-0 flex items-center justify-between ps-6 pointer-events-none">
-                                            <p className="text-gray-500">.00</p>
-                                        </div>
-                                        <input type="text" id="Renda" className="border text-center border-gray-300 text-gray-600 text-sm rounded-full focus:outline-none focus:border-gray-300 focus:ring-2 block w-full p-2.5" placeholder="" />
-                                    </div>
-                                </div>
-                                <div className="">
-                                    <label htmlFor="Número" className="block mb-2 text-sm font-medium text-gray-600 dark:text-white">Renda familiar</label>
-                                    <input type="number" className="border border-gray-soo text-gray-600 text-sm rounded-full focus:outline-none focus:border-gray-300 focus:ring-2 block w-full p-2.5" />
-                                </div>
-                            </div>
-                            <div className="flex flex-col  pt-3 gap-3 pb-2 justify-between">
-                                <div className="flex items-center">
-                                    <input id="checkbox" type="checkbox" value="" className="w-5 h-5 text-orange-600 bg-gray-100 checked:bg-orange-500 border-gray-200 rounded focus:ring-orange-500 dark:focus:ring-orange-600" />
-                                    <label htmlFor="checkbox" className="ms-2 text-sm font-medium text-gray-600 hover:text-orange-500">Possuo imóvel próprio</label>
-                                </div>
-                                <div className="flex items-center">
-                                    <input id="checkbox1" type="checkbox" value="" className="w-5 h-5 text-orange-600 bg-gray-100 checked:bg-orange-500 border-gray-200 rounded focus:ring-orange-500 dark:focus:ring-orange-600" />
-                                    <label htmlFor="checkbox1" className="ms-2 text-sm font-medium text-gray-600 hover:text-orange-500">Desejo receber informações de escolas na minha região</label>
-                                </div>
-                            </div>
-                            <div className="flex flex-col  pt-3 pb-2 justify-between">
-                                <p className="text-gray-500 justify-between text-4xl pb-3 md:w-full border-b">Alterar Minha Senha</p>
-                            </div>
                             <div className="flex justify-between pt-10 pb-10">
                                 <button className="border start-5 border-b rounded-full py-2 px-3 border-orange-500 hover:bg-orange-500 hover:text-white text-orange-500">Alterar Senha</button>
                                 <button className="border start-5 border-b rounded-full py-2 px-3 border-orange-500 bg-orange-500 text-white">Alterar Senha</button>

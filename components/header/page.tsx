@@ -3,8 +3,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Logo from "@/public/assets/images/logo_common.png";
-
-
 import SearchList from "./searchList";
 import Communicate from "./communicate";
 import Menu from "./menu";
