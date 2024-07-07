@@ -24,7 +24,8 @@ const Communicate: React.FC<CommunicateProps> = ({ menu, setMenu }) => {
     setMenuShow(!menuShow);
   };
 
-  const loginStatus = getFromLocalStorage('token');
+  // const loginStatus = getFromLocalStorage('token');
+  const loginStatus = 'getFromLocalStorage';
 
   return (
     <>
@@ -170,7 +171,7 @@ const Communicate: React.FC<CommunicateProps> = ({ menu, setMenu }) => {
         {loginStatus ? (
           <button className="flex gap-5 pt-10 justify-start items-center"
             onClick={() => {
-              removeFromLocalStorage('token');
+              // removeFromLocalStorage('token');
               setMenu(0);
             }}
           >

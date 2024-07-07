@@ -447,7 +447,7 @@ const MenuTipCard:React.FC = () => {
     </a>
     <a
       onClick={() => {
-        removeFromLocalStorage('token');
+        // removeFromLocalStorage('token');
         window.location.href='/';
         toast.success("Successfully logged out....")
       }}

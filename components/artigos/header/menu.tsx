@@ -8,7 +8,8 @@ interface MeneProps{
 
 const Mene: React.FC<MeneProps> = ({enter}) => {
   const [menuShow, setMenuShow] = useState<boolean>(false);
-  const loginStatus = getFromLocalStorage('token');
+  // const loginStatus = getFromLocalStorage('token');
+  const loginStatus = 'df';
   const toggleEvent = () => {
     setMenuShow(!menuShow);
   };
