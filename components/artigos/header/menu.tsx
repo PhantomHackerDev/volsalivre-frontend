@@ -1,4 +1,5 @@
 import { MenuTipCard } from "@/components/basecomponents/cards";
+import { getFromLocalStorage } from "@/utils/localstorage";
 import React, { useState } from "react";
 
 interface MeneProps{
@@ -7,7 +8,7 @@ interface MeneProps{
 
 const Mene: React.FC<MeneProps> = ({enter}) => {
   const [menuShow, setMenuShow] = useState<boolean>(false);
-  const loginStatus = localStorage.getItem('token');
+  const loginStatus = getFromLocalStorage('token');
   const toggleEvent = () => {
     setMenuShow(!menuShow);
   };

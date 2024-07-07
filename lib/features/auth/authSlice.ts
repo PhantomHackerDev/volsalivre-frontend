@@ -3,6 +3,7 @@ import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import setAuthToken from '@/utils/setAuthToken';
 import jwt_decode, { jwtDecode } from 'jwt-decode';
 import { toast } from 'react-toastify'
+import { setFromLocalStorage } from "@/utils/localstorage";
 
 interface AuthState {
   token: string | null;
@@ -23,7 +24,8 @@ const authSlice = createSlice({
   initialState,
   reducers: {
     setCredentials: (state, action: PayloadAction<{ token: string }>) => {
-      localStorage.setItem("token", action.payload.token);
+      setFromLocalStorage(action.payload.token);
+      // localStorage.setItem("token", action.payload.token);
       setAuthToken(action.payload.token);
       const decoded = jwtDecode(action.payload.token);
       state.user = decoded;

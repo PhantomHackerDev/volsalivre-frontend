@@ -6,6 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import Login from "@/components/artigos/login";
 import { MenuTipCard } from "../basecomponents/cards";
 import { useAppDispatch, RootState } from "@/lib/store";
+import { getFromLocalStorage, removeFromLocalStorage } from "@/utils/localstorage";
 
 interface CommunicateProps {
   menu: number;
@@ -23,7 +24,7 @@ const Communicate: React.FC<CommunicateProps> = ({ menu, setMenu }) => {
     setMenuShow(!menuShow);
   };
 
-  const loginStatus = localStorage.token;
+  const loginStatus = getFromLocalStorage('token');
 
   return (
     <>
@@ -169,7 +170,7 @@ const Communicate: React.FC<CommunicateProps> = ({ menu, setMenu }) => {
         {loginStatus ? (
           <button className="flex gap-5 pt-10 justify-start items-center"
             onClick={() => {
-              localStorage.removeItem('token');
+              removeFromLocalStorage('token');
               setMenu(0);
             }}
           >

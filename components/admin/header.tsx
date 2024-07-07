@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import Logo from "@/public/assets/images/logo_blue.png";
 import { toast } from 'react-toastify';
+import { removeFromLocalStorage } from "@/utils/localstorage";
 
 
 interface CommunicateProps {
@@ -125,7 +126,7 @@ const Header: React.FC<CommunicateProps> = () => {
                     <div className="origin-top-right absolute right-24 mt-[85px] text-center w-32 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
                       <a
                         onClick={() => {
-                          localStorage.removeItem('token');
+                          removeFromLocalStorage('token');
                           window.location.href='/';
                           toast.success("Successfully logged out....")
                         }}
@@ -217,7 +218,7 @@ const Header: React.FC<CommunicateProps> = () => {
                     <div className="origin-top-right absolute right-0 mt-20 text-center w-32 rounded-md shadow-lg py-1 bg-white ring-1 ring-black ring-opacity-5">
                       <a
                         onClick={() => {
-                          localStorage.removeItem('token');
+                          removeFromLocalStorage('token');
                           window.location.href='/';
                           toast.success("Successfully logged out....")
                         }}

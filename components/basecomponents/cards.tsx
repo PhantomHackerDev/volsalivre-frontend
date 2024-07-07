@@ -1,6 +1,7 @@
 import { log } from "console";
 import { start } from "repl";
 import { toast } from 'react-toastify';
+import { removeFromLocalStorage } from "@/utils/localstorage";
 
 const stars = [0, 0, 0, 0, 0];
 
@@ -446,7 +447,7 @@ const MenuTipCard:React.FC = () => {
     </a>
     <a
       onClick={() => {
-        localStorage.removeItem('token');
+        removeFromLocalStorage('token');
         window.location.href='/';
         toast.success("Successfully logged out....")
       }}
