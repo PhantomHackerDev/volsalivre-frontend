@@ -10,7 +10,7 @@ const SearchResults: React.FC<OtherSchoolsProps> = ({}) => {
         <p className="text-slate-700">Showing {} close to <a href="#" className="text-blue-500 hover:text-blue-700">Sao Paulo-SP</a></p>
         <a href="/escola/busca" className="text-blue-500 underline hover:text-blue-700">See all schools</a>        
       </div>
-        <Carousel />
+        {/* <Carousel /> */}
     </div>
   );
 };
