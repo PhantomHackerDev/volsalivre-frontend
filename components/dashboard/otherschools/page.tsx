@@ -1,3 +1,5 @@
+"use client";
+
 import Carousel from "@/components/dashboard/otherschools/carousel";
 
 interface OtherSchoolsProps {}

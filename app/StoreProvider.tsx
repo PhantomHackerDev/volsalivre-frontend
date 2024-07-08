@@ -4,6 +4,7 @@
 import { ReactNode } from 'react';
 import { Provider } from 'react-redux';
 import store from '@/lib/store';
+// import "@/app/globals.css";
 
 type Props = {
   children: ReactNode;

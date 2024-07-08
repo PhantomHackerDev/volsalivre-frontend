@@ -7,7 +7,7 @@ import Login from "@/components/artigos/login";
 import Menu from "@/components/artigos/header/menu";
 import { MenuTipCard } from "@/components/basecomponents/cards";
 
-const loginStatus: any = [];
+// const loginStatus: any = [];
 const Header = () => {
   const [toenter, setToEnter] = useState<boolean>(false);
   const [menuShow, setMenuShow] = useState<boolean>(false);

@@ -1,11 +1,9 @@
 "use client";
 
-import { useState, useRef, useEffect, ReactNode } from "react";
+import { useState, useEffect } from "react";
 import React from "react";
-import { useDispatch, useSelector } from "react-redux";
 import Login from "@/components/artigos/login";
 import { MenuTipCard } from "../basecomponents/cards";
-import { useAppDispatch, RootState } from "@/lib/store";
 import { getFromLocalStorage, removeFromLocalStorage } from "@/utils/localstorage";
 
 interface CommunicateProps {
@@ -16,15 +14,17 @@ interface CommunicateProps {
 const Communicate: React.FC<CommunicateProps> = ({ menu, setMenu }) => {
   const [toenter, setToEnter] = useState<boolean>(false);
   const [menuShow, setMenuShow] = useState<boolean>(false);
+  const [loginStatus, setLoginStatus] = useState<string | null>(null);
 
-  const token = useSelector((state: RootState) => state.auth.token);
-  const status = useSelector((state: RootState) => state.auth.status);
-
+  useEffect(() => {
+    const token = getFromLocalStorage('token');
+    setLoginStatus(token);
+  }, [toenter]);
   const toggleEvent = () => {
     setMenuShow(!menuShow);
   };
 
-  const loginStatus = getFromLocalStorage('token');
+  // const loginStatus = getFromLocalStorage('token');
 
   return (
     <>
@@ -87,24 +87,14 @@ const Communicate: React.FC<CommunicateProps> = ({ menu, setMenu }) => {
               </svg>
             </span>
           </button>
-          {loginStatus ? (
-            <>
-              <button
-                onClick={toggleEvent}
-                className="flex rounded-full border bg-white px-1.5 items-center text-sm text-gray-500 space-x-1"
-              >
-                <p>H</p>
-              </button>
-              {menuShow && <MenuTipCard />}
-            </>
-          ) : (
-            <button
-              className="px-4 py-2.5 rounded-full border border-white hover:bg-violet-800"
-              onClick={() => setToEnter(!toenter)}
-            >
-              <span className="text-white">To Enter</span>
-            </button>
-          )}
+          <button
+            onClick={loginStatus ? toggleEvent:() => setToEnter(!toenter)}
+            className={`${loginStatus ? "flex rounded-full border bg-white px-1.5 items-center text-sm text-gray-500 space-x-1" 
+              : "px-4 py-2.5 rounded-full border border-white text-white hover:bg-violet-800"}`}
+          >
+            <span>{loginStatus ? "H" : "Login"}</span>
+          </button>
+          {menuShow && <MenuTipCard />}
         </div>
       </div>
 

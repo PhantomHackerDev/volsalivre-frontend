@@ -43,8 +43,15 @@ const axiosBaseQuery =
           data: credentials,
         }),
       }),
+      getByPrivate: builder.mutation<{ privateSchool: [] }, void>({
+        query: (credentials) => ({
+          url: '/getByPrivate',
+          method: 'get',
+          data: credentials,
+        }),
+      }),
     }),
   });
   
-  export const { useStepSearchMutation, useAddLevelMutation, useAddSchoolMutation } = schoolsApi;
+  export const { useStepSearchMutation, useAddLevelMutation, useAddSchoolMutation, useGetByPrivateMutation } = schoolsApi;
   

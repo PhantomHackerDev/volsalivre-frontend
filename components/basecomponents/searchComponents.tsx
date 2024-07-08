@@ -111,7 +111,6 @@ const SearchButton: React.FC<SearchButtonProps> = ({ disp, className }) => {
           SEARCH BY CITY
         </p>
         <button className="px-6 py-4 text-sm text-orange-600 bg-white">
-          <div className="flex">
             <span>
               <svg
                 className="w-5 h-5 text-slate-600 dark:text-white"
@@ -130,7 +129,6 @@ const SearchButton: React.FC<SearchButtonProps> = ({ disp, className }) => {
               </svg>
             </span>
             <span> My location </span>
-          </div>
         </button>
         <p className="px-4 py-2 font-semibold bg-slate-100 text-slate-500">
           SUGGESTIONS
